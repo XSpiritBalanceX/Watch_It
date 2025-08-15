@@ -17,54 +17,23 @@ model User {
   name     String?
   password String
 
-  watchedItems  WatchedItem[]
-  toWatchItems  ToWatchItem[]
-  watchingItems WatchingItem[]
+  watchItems WatchItem[]
 
   @@map("user")
 }
 
-model WatchedItem {
+model WatchItem {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now()) @map("created_at")
 
   title       String
   type        String
-  director    String?
-  releaseYear Int?    @map("release_year")
+  director    String
+  releaseYear Int     @map("release_year")
+  isWatched   Boolean @map("is_watched")
 
   user   User   @relation(fields: [userId], references: [id])
   userId String @map("user_id")
 
-  @@map("watched_item")
-}
-
-model ToWatchItem {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @map("created_at")
-
-  title       String
-  type        String
-  director    String?
-  releaseYear Int?    @map("release_year")
-
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @map("user_id")
-
-  @@map("to_watch_item")
-}
-
-model WatchingItem {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now()) @map("created_at")
-
-  title       String
-  type        String
-  director    String?
-  releaseYear Int?    @map("release_year")
-
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @map("user_id")
-
-  @@map("watching_item")
+  @@map("watch_item")
 }

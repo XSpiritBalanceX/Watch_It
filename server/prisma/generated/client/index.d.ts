@@ -19,20 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model WatchedItem
+ * Model WatchItem
  * 
  */
-export type WatchedItem = $Result.DefaultSelection<Prisma.$WatchedItemPayload>
-/**
- * Model ToWatchItem
- * 
- */
-export type ToWatchItem = $Result.DefaultSelection<Prisma.$ToWatchItemPayload>
-/**
- * Model WatchingItem
- * 
- */
-export type WatchingItem = $Result.DefaultSelection<Prisma.$WatchingItemPayload>
+export type WatchItem = $Result.DefaultSelection<Prisma.$WatchItemPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -163,34 +153,14 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.watchedItem`: Exposes CRUD operations for the **WatchedItem** model.
+   * `prisma.watchItem`: Exposes CRUD operations for the **WatchItem** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more WatchedItems
-    * const watchedItems = await prisma.watchedItem.findMany()
+    * // Fetch zero or more WatchItems
+    * const watchItems = await prisma.watchItem.findMany()
     * ```
     */
-  get watchedItem(): Prisma.WatchedItemDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.toWatchItem`: Exposes CRUD operations for the **ToWatchItem** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more ToWatchItems
-    * const toWatchItems = await prisma.toWatchItem.findMany()
-    * ```
-    */
-  get toWatchItem(): Prisma.ToWatchItemDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.watchingItem`: Exposes CRUD operations for the **WatchingItem** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more WatchingItems
-    * const watchingItems = await prisma.watchingItem.findMany()
-    * ```
-    */
-  get watchingItem(): Prisma.WatchingItemDelegate<ExtArgs, ClientOptions>;
+  get watchItem(): Prisma.WatchItemDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -632,9 +602,7 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    WatchedItem: 'WatchedItem',
-    ToWatchItem: 'ToWatchItem',
-    WatchingItem: 'WatchingItem'
+    WatchItem: 'WatchItem'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -653,7 +621,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "watchedItem" | "toWatchItem" | "watchingItem"
+      modelProps: "user" | "watchItem"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -731,225 +699,77 @@ export namespace Prisma {
           }
         }
       }
-      WatchedItem: {
-        payload: Prisma.$WatchedItemPayload<ExtArgs>
-        fields: Prisma.WatchedItemFieldRefs
+      WatchItem: {
+        payload: Prisma.$WatchItemPayload<ExtArgs>
+        fields: Prisma.WatchItemFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.WatchedItemFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload> | null
+            args: Prisma.WatchItemFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.WatchedItemFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           findFirst: {
-            args: Prisma.WatchedItemFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload> | null
+            args: Prisma.WatchItemFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.WatchedItemFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           findMany: {
-            args: Prisma.WatchedItemFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>[]
+            args: Prisma.WatchItemFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>[]
           }
           create: {
-            args: Prisma.WatchedItemCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           createMany: {
-            args: Prisma.WatchedItemCreateManyArgs<ExtArgs>
+            args: Prisma.WatchItemCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.WatchedItemCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>[]
+            args: Prisma.WatchItemCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>[]
           }
           delete: {
-            args: Prisma.WatchedItemDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           update: {
-            args: Prisma.WatchedItemUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           deleteMany: {
-            args: Prisma.WatchedItemDeleteManyArgs<ExtArgs>
+            args: Prisma.WatchItemDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.WatchedItemUpdateManyArgs<ExtArgs>
+            args: Prisma.WatchItemUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.WatchedItemUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>[]
+            args: Prisma.WatchItemUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>[]
           }
           upsert: {
-            args: Prisma.WatchedItemUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchedItemPayload>
+            args: Prisma.WatchItemUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$WatchItemPayload>
           }
           aggregate: {
-            args: Prisma.WatchedItemAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateWatchedItem>
+            args: Prisma.WatchItemAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateWatchItem>
           }
           groupBy: {
-            args: Prisma.WatchedItemGroupByArgs<ExtArgs>
-            result: $Utils.Optional<WatchedItemGroupByOutputType>[]
+            args: Prisma.WatchItemGroupByArgs<ExtArgs>
+            result: $Utils.Optional<WatchItemGroupByOutputType>[]
           }
           count: {
-            args: Prisma.WatchedItemCountArgs<ExtArgs>
-            result: $Utils.Optional<WatchedItemCountAggregateOutputType> | number
-          }
-        }
-      }
-      ToWatchItem: {
-        payload: Prisma.$ToWatchItemPayload<ExtArgs>
-        fields: Prisma.ToWatchItemFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.ToWatchItemFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.ToWatchItemFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          findFirst: {
-            args: Prisma.ToWatchItemFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.ToWatchItemFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          findMany: {
-            args: Prisma.ToWatchItemFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>[]
-          }
-          create: {
-            args: Prisma.ToWatchItemCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          createMany: {
-            args: Prisma.ToWatchItemCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.ToWatchItemCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>[]
-          }
-          delete: {
-            args: Prisma.ToWatchItemDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          update: {
-            args: Prisma.ToWatchItemUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          deleteMany: {
-            args: Prisma.ToWatchItemDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.ToWatchItemUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.ToWatchItemUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>[]
-          }
-          upsert: {
-            args: Prisma.ToWatchItemUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$ToWatchItemPayload>
-          }
-          aggregate: {
-            args: Prisma.ToWatchItemAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateToWatchItem>
-          }
-          groupBy: {
-            args: Prisma.ToWatchItemGroupByArgs<ExtArgs>
-            result: $Utils.Optional<ToWatchItemGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.ToWatchItemCountArgs<ExtArgs>
-            result: $Utils.Optional<ToWatchItemCountAggregateOutputType> | number
-          }
-        }
-      }
-      WatchingItem: {
-        payload: Prisma.$WatchingItemPayload<ExtArgs>
-        fields: Prisma.WatchingItemFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.WatchingItemFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.WatchingItemFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          findFirst: {
-            args: Prisma.WatchingItemFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.WatchingItemFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          findMany: {
-            args: Prisma.WatchingItemFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>[]
-          }
-          create: {
-            args: Prisma.WatchingItemCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          createMany: {
-            args: Prisma.WatchingItemCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.WatchingItemCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>[]
-          }
-          delete: {
-            args: Prisma.WatchingItemDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          update: {
-            args: Prisma.WatchingItemUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          deleteMany: {
-            args: Prisma.WatchingItemDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.WatchingItemUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.WatchingItemUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>[]
-          }
-          upsert: {
-            args: Prisma.WatchingItemUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$WatchingItemPayload>
-          }
-          aggregate: {
-            args: Prisma.WatchingItemAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateWatchingItem>
-          }
-          groupBy: {
-            args: Prisma.WatchingItemGroupByArgs<ExtArgs>
-            result: $Utils.Optional<WatchingItemGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.WatchingItemCountArgs<ExtArgs>
-            result: $Utils.Optional<WatchingItemCountAggregateOutputType> | number
+            args: Prisma.WatchItemCountArgs<ExtArgs>
+            result: $Utils.Optional<WatchItemCountAggregateOutputType> | number
           }
         }
       }
@@ -1046,9 +866,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    watchedItem?: WatchedItemOmit
-    toWatchItem?: ToWatchItemOmit
-    watchingItem?: WatchingItemOmit
+    watchItem?: WatchItemOmit
   }
 
   /* Types for Logging */
@@ -1129,15 +947,11 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    watchedItems: number
-    toWatchItems: number
-    watchingItems: number
+    watchItems: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    watchedItems?: boolean | UserCountOutputTypeCountWatchedItemsArgs
-    toWatchItems?: boolean | UserCountOutputTypeCountToWatchItemsArgs
-    watchingItems?: boolean | UserCountOutputTypeCountWatchingItemsArgs
+    watchItems?: boolean | UserCountOutputTypeCountWatchItemsArgs
   }
 
   // Custom InputTypes
@@ -1154,22 +968,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountWatchedItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WatchedItemWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountToWatchItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ToWatchItemWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountWatchingItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WatchingItemWhereInput
+  export type UserCountOutputTypeCountWatchItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WatchItemWhereInput
   }
 
 
@@ -1349,9 +1149,7 @@ export namespace Prisma {
     email?: boolean
     name?: boolean
     password?: boolean
-    watchedItems?: boolean | User$watchedItemsArgs<ExtArgs>
-    toWatchItems?: boolean | User$toWatchItemsArgs<ExtArgs>
-    watchingItems?: boolean | User$watchingItemsArgs<ExtArgs>
+    watchItems?: boolean | User$watchItemsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1384,9 +1182,7 @@ export namespace Prisma {
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "email" | "name" | "password", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    watchedItems?: boolean | User$watchedItemsArgs<ExtArgs>
-    toWatchItems?: boolean | User$toWatchItemsArgs<ExtArgs>
-    watchingItems?: boolean | User$watchingItemsArgs<ExtArgs>
+    watchItems?: boolean | User$watchItemsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1395,9 +1191,7 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      watchedItems: Prisma.$WatchedItemPayload<ExtArgs>[]
-      toWatchItems: Prisma.$ToWatchItemPayload<ExtArgs>[]
-      watchingItems: Prisma.$WatchingItemPayload<ExtArgs>[]
+      watchItems: Prisma.$WatchItemPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -1800,9 +1594,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    watchedItems<T extends User$watchedItemsArgs<ExtArgs> = {}>(args?: Subset<T, User$watchedItemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    toWatchItems<T extends User$toWatchItemsArgs<ExtArgs> = {}>(args?: Subset<T, User$toWatchItemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    watchingItems<T extends User$watchingItemsArgs<ExtArgs> = {}>(args?: Subset<T, User$watchingItemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    watchItems<T extends User$watchItemsArgs<ExtArgs> = {}>(args?: Subset<T, User$watchItemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2214,75 +2006,27 @@ export namespace Prisma {
   }
 
   /**
-   * User.watchedItems
+   * User.watchItems
    */
-  export type User$watchedItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type User$watchItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
-    where?: WatchedItemWhereInput
-    orderBy?: WatchedItemOrderByWithRelationInput | WatchedItemOrderByWithRelationInput[]
-    cursor?: WatchedItemWhereUniqueInput
+    include?: WatchItemInclude<ExtArgs> | null
+    where?: WatchItemWhereInput
+    orderBy?: WatchItemOrderByWithRelationInput | WatchItemOrderByWithRelationInput[]
+    cursor?: WatchItemWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: WatchedItemScalarFieldEnum | WatchedItemScalarFieldEnum[]
-  }
-
-  /**
-   * User.toWatchItems
-   */
-  export type User$toWatchItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    where?: ToWatchItemWhereInput
-    orderBy?: ToWatchItemOrderByWithRelationInput | ToWatchItemOrderByWithRelationInput[]
-    cursor?: ToWatchItemWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ToWatchItemScalarFieldEnum | ToWatchItemScalarFieldEnum[]
-  }
-
-  /**
-   * User.watchingItems
-   */
-  export type User$watchingItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    where?: WatchingItemWhereInput
-    orderBy?: WatchingItemOrderByWithRelationInput | WatchingItemOrderByWithRelationInput[]
-    cursor?: WatchingItemWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: WatchingItemScalarFieldEnum | WatchingItemScalarFieldEnum[]
+    distinct?: WatchItemScalarFieldEnum | WatchItemScalarFieldEnum[]
   }
 
   /**
@@ -2305,267 +2049,278 @@ export namespace Prisma {
 
 
   /**
-   * Model WatchedItem
+   * Model WatchItem
    */
 
-  export type AggregateWatchedItem = {
-    _count: WatchedItemCountAggregateOutputType | null
-    _avg: WatchedItemAvgAggregateOutputType | null
-    _sum: WatchedItemSumAggregateOutputType | null
-    _min: WatchedItemMinAggregateOutputType | null
-    _max: WatchedItemMaxAggregateOutputType | null
+  export type AggregateWatchItem = {
+    _count: WatchItemCountAggregateOutputType | null
+    _avg: WatchItemAvgAggregateOutputType | null
+    _sum: WatchItemSumAggregateOutputType | null
+    _min: WatchItemMinAggregateOutputType | null
+    _max: WatchItemMaxAggregateOutputType | null
   }
 
-  export type WatchedItemAvgAggregateOutputType = {
+  export type WatchItemAvgAggregateOutputType = {
     releaseYear: number | null
   }
 
-  export type WatchedItemSumAggregateOutputType = {
+  export type WatchItemSumAggregateOutputType = {
     releaseYear: number | null
   }
 
-  export type WatchedItemMinAggregateOutputType = {
+  export type WatchItemMinAggregateOutputType = {
     id: string | null
     createdAt: Date | null
     title: string | null
     type: string | null
     director: string | null
     releaseYear: number | null
+    isWatched: boolean | null
     userId: string | null
   }
 
-  export type WatchedItemMaxAggregateOutputType = {
+  export type WatchItemMaxAggregateOutputType = {
     id: string | null
     createdAt: Date | null
     title: string | null
     type: string | null
     director: string | null
     releaseYear: number | null
+    isWatched: boolean | null
     userId: string | null
   }
 
-  export type WatchedItemCountAggregateOutputType = {
+  export type WatchItemCountAggregateOutputType = {
     id: number
     createdAt: number
     title: number
     type: number
     director: number
     releaseYear: number
+    isWatched: number
     userId: number
     _all: number
   }
 
 
-  export type WatchedItemAvgAggregateInputType = {
+  export type WatchItemAvgAggregateInputType = {
     releaseYear?: true
   }
 
-  export type WatchedItemSumAggregateInputType = {
+  export type WatchItemSumAggregateInputType = {
     releaseYear?: true
   }
 
-  export type WatchedItemMinAggregateInputType = {
+  export type WatchItemMinAggregateInputType = {
     id?: true
     createdAt?: true
     title?: true
     type?: true
     director?: true
     releaseYear?: true
+    isWatched?: true
     userId?: true
   }
 
-  export type WatchedItemMaxAggregateInputType = {
+  export type WatchItemMaxAggregateInputType = {
     id?: true
     createdAt?: true
     title?: true
     type?: true
     director?: true
     releaseYear?: true
+    isWatched?: true
     userId?: true
   }
 
-  export type WatchedItemCountAggregateInputType = {
+  export type WatchItemCountAggregateInputType = {
     id?: true
     createdAt?: true
     title?: true
     type?: true
     director?: true
     releaseYear?: true
+    isWatched?: true
     userId?: true
     _all?: true
   }
 
-  export type WatchedItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which WatchedItem to aggregate.
+     * Filter which WatchItem to aggregate.
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of WatchedItems to fetch.
+     * Determine the order of WatchItems to fetch.
      */
-    orderBy?: WatchedItemOrderByWithRelationInput | WatchedItemOrderByWithRelationInput[]
+    orderBy?: WatchItemOrderByWithRelationInput | WatchItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: WatchedItemWhereUniqueInput
+    cursor?: WatchItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` WatchedItems from the position of the cursor.
+     * Take `±n` WatchItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` WatchedItems.
+     * Skip the first `n` WatchItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned WatchedItems
+     * Count returned WatchItems
     **/
-    _count?: true | WatchedItemCountAggregateInputType
+    _count?: true | WatchItemCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: WatchedItemAvgAggregateInputType
+    _avg?: WatchItemAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: WatchedItemSumAggregateInputType
+    _sum?: WatchItemSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: WatchedItemMinAggregateInputType
+    _min?: WatchItemMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: WatchedItemMaxAggregateInputType
+    _max?: WatchItemMaxAggregateInputType
   }
 
-  export type GetWatchedItemAggregateType<T extends WatchedItemAggregateArgs> = {
-        [P in keyof T & keyof AggregateWatchedItem]: P extends '_count' | 'count'
+  export type GetWatchItemAggregateType<T extends WatchItemAggregateArgs> = {
+        [P in keyof T & keyof AggregateWatchItem]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateWatchedItem[P]>
-      : GetScalarType<T[P], AggregateWatchedItem[P]>
+        : GetScalarType<T[P], AggregateWatchItem[P]>
+      : GetScalarType<T[P], AggregateWatchItem[P]>
   }
 
 
 
 
-  export type WatchedItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WatchedItemWhereInput
-    orderBy?: WatchedItemOrderByWithAggregationInput | WatchedItemOrderByWithAggregationInput[]
-    by: WatchedItemScalarFieldEnum[] | WatchedItemScalarFieldEnum
-    having?: WatchedItemScalarWhereWithAggregatesInput
+  export type WatchItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: WatchItemWhereInput
+    orderBy?: WatchItemOrderByWithAggregationInput | WatchItemOrderByWithAggregationInput[]
+    by: WatchItemScalarFieldEnum[] | WatchItemScalarFieldEnum
+    having?: WatchItemScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: WatchedItemCountAggregateInputType | true
-    _avg?: WatchedItemAvgAggregateInputType
-    _sum?: WatchedItemSumAggregateInputType
-    _min?: WatchedItemMinAggregateInputType
-    _max?: WatchedItemMaxAggregateInputType
+    _count?: WatchItemCountAggregateInputType | true
+    _avg?: WatchItemAvgAggregateInputType
+    _sum?: WatchItemSumAggregateInputType
+    _min?: WatchItemMinAggregateInputType
+    _max?: WatchItemMaxAggregateInputType
   }
 
-  export type WatchedItemGroupByOutputType = {
+  export type WatchItemGroupByOutputType = {
     id: string
     createdAt: Date
     title: string
     type: string
-    director: string | null
-    releaseYear: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
     userId: string
-    _count: WatchedItemCountAggregateOutputType | null
-    _avg: WatchedItemAvgAggregateOutputType | null
-    _sum: WatchedItemSumAggregateOutputType | null
-    _min: WatchedItemMinAggregateOutputType | null
-    _max: WatchedItemMaxAggregateOutputType | null
+    _count: WatchItemCountAggregateOutputType | null
+    _avg: WatchItemAvgAggregateOutputType | null
+    _sum: WatchItemSumAggregateOutputType | null
+    _min: WatchItemMinAggregateOutputType | null
+    _max: WatchItemMaxAggregateOutputType | null
   }
 
-  type GetWatchedItemGroupByPayload<T extends WatchedItemGroupByArgs> = Prisma.PrismaPromise<
+  type GetWatchItemGroupByPayload<T extends WatchItemGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<WatchedItemGroupByOutputType, T['by']> &
+      PickEnumerable<WatchItemGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof WatchedItemGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof WatchItemGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], WatchedItemGroupByOutputType[P]>
-            : GetScalarType<T[P], WatchedItemGroupByOutputType[P]>
+              : GetScalarType<T[P], WatchItemGroupByOutputType[P]>
+            : GetScalarType<T[P], WatchItemGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type WatchedItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WatchItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     title?: boolean
     type?: boolean
     director?: boolean
     releaseYear?: boolean
+    isWatched?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchedItem"]>
+  }, ExtArgs["result"]["watchItem"]>
 
-  export type WatchedItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WatchItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     title?: boolean
     type?: boolean
     director?: boolean
     releaseYear?: boolean
+    isWatched?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchedItem"]>
+  }, ExtArgs["result"]["watchItem"]>
 
-  export type WatchedItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type WatchItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     title?: boolean
     type?: boolean
     director?: boolean
     releaseYear?: boolean
+    isWatched?: boolean
     userId?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchedItem"]>
+  }, ExtArgs["result"]["watchItem"]>
 
-  export type WatchedItemSelectScalar = {
+  export type WatchItemSelectScalar = {
     id?: boolean
     createdAt?: boolean
     title?: boolean
     type?: boolean
     director?: boolean
     releaseYear?: boolean
+    isWatched?: boolean
     userId?: boolean
   }
 
-  export type WatchedItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "title" | "type" | "director" | "releaseYear" | "userId", ExtArgs["result"]["watchedItem"]>
-  export type WatchedItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "title" | "type" | "director" | "releaseYear" | "isWatched" | "userId", ExtArgs["result"]["watchItem"]>
+  export type WatchItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type WatchedItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
-  export type WatchedItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
-  export type $WatchedItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "WatchedItem"
+  export type $WatchItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "WatchItem"
     objects: {
       user: Prisma.$UserPayload<ExtArgs>
     }
@@ -2574,139 +2329,140 @@ export namespace Prisma {
       createdAt: Date
       title: string
       type: string
-      director: string | null
-      releaseYear: number | null
+      director: string
+      releaseYear: number
+      isWatched: boolean
       userId: string
-    }, ExtArgs["result"]["watchedItem"]>
+    }, ExtArgs["result"]["watchItem"]>
     composites: {}
   }
 
-  type WatchedItemGetPayload<S extends boolean | null | undefined | WatchedItemDefaultArgs> = $Result.GetResult<Prisma.$WatchedItemPayload, S>
+  type WatchItemGetPayload<S extends boolean | null | undefined | WatchItemDefaultArgs> = $Result.GetResult<Prisma.$WatchItemPayload, S>
 
-  type WatchedItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<WatchedItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: WatchedItemCountAggregateInputType | true
+  type WatchItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<WatchItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: WatchItemCountAggregateInputType | true
     }
 
-  export interface WatchedItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WatchedItem'], meta: { name: 'WatchedItem' } }
+  export interface WatchItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WatchItem'], meta: { name: 'WatchItem' } }
     /**
-     * Find zero or one WatchedItem that matches the filter.
-     * @param {WatchedItemFindUniqueArgs} args - Arguments to find a WatchedItem
+     * Find zero or one WatchItem that matches the filter.
+     * @param {WatchItemFindUniqueArgs} args - Arguments to find a WatchItem
      * @example
-     * // Get one WatchedItem
-     * const watchedItem = await prisma.watchedItem.findUnique({
+     * // Get one WatchItem
+     * const watchItem = await prisma.watchItem.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends WatchedItemFindUniqueArgs>(args: SelectSubset<T, WatchedItemFindUniqueArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends WatchItemFindUniqueArgs>(args: SelectSubset<T, WatchItemFindUniqueArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one WatchedItem that matches the filter or throw an error with `error.code='P2025'`
+     * Find one WatchItem that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {WatchedItemFindUniqueOrThrowArgs} args - Arguments to find a WatchedItem
+     * @param {WatchItemFindUniqueOrThrowArgs} args - Arguments to find a WatchItem
      * @example
-     * // Get one WatchedItem
-     * const watchedItem = await prisma.watchedItem.findUniqueOrThrow({
+     * // Get one WatchItem
+     * const watchItem = await prisma.watchItem.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends WatchedItemFindUniqueOrThrowArgs>(args: SelectSubset<T, WatchedItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends WatchItemFindUniqueOrThrowArgs>(args: SelectSubset<T, WatchItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first WatchedItem that matches the filter.
+     * Find the first WatchItem that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemFindFirstArgs} args - Arguments to find a WatchedItem
+     * @param {WatchItemFindFirstArgs} args - Arguments to find a WatchItem
      * @example
-     * // Get one WatchedItem
-     * const watchedItem = await prisma.watchedItem.findFirst({
+     * // Get one WatchItem
+     * const watchItem = await prisma.watchItem.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends WatchedItemFindFirstArgs>(args?: SelectSubset<T, WatchedItemFindFirstArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends WatchItemFindFirstArgs>(args?: SelectSubset<T, WatchItemFindFirstArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first WatchedItem that matches the filter or
+     * Find the first WatchItem that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemFindFirstOrThrowArgs} args - Arguments to find a WatchedItem
+     * @param {WatchItemFindFirstOrThrowArgs} args - Arguments to find a WatchItem
      * @example
-     * // Get one WatchedItem
-     * const watchedItem = await prisma.watchedItem.findFirstOrThrow({
+     * // Get one WatchItem
+     * const watchItem = await prisma.watchItem.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends WatchedItemFindFirstOrThrowArgs>(args?: SelectSubset<T, WatchedItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends WatchItemFindFirstOrThrowArgs>(args?: SelectSubset<T, WatchItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more WatchedItems that matches the filter.
+     * Find zero or more WatchItems that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {WatchItemFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all WatchedItems
-     * const watchedItems = await prisma.watchedItem.findMany()
+     * // Get all WatchItems
+     * const watchItems = await prisma.watchItem.findMany()
      * 
-     * // Get first 10 WatchedItems
-     * const watchedItems = await prisma.watchedItem.findMany({ take: 10 })
+     * // Get first 10 WatchItems
+     * const watchItems = await prisma.watchItem.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const watchedItemWithIdOnly = await prisma.watchedItem.findMany({ select: { id: true } })
+     * const watchItemWithIdOnly = await prisma.watchItem.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends WatchedItemFindManyArgs>(args?: SelectSubset<T, WatchedItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends WatchItemFindManyArgs>(args?: SelectSubset<T, WatchItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a WatchedItem.
-     * @param {WatchedItemCreateArgs} args - Arguments to create a WatchedItem.
+     * Create a WatchItem.
+     * @param {WatchItemCreateArgs} args - Arguments to create a WatchItem.
      * @example
-     * // Create one WatchedItem
-     * const WatchedItem = await prisma.watchedItem.create({
+     * // Create one WatchItem
+     * const WatchItem = await prisma.watchItem.create({
      *   data: {
-     *     // ... data to create a WatchedItem
+     *     // ... data to create a WatchItem
      *   }
      * })
      * 
      */
-    create<T extends WatchedItemCreateArgs>(args: SelectSubset<T, WatchedItemCreateArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends WatchItemCreateArgs>(args: SelectSubset<T, WatchItemCreateArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many WatchedItems.
-     * @param {WatchedItemCreateManyArgs} args - Arguments to create many WatchedItems.
+     * Create many WatchItems.
+     * @param {WatchItemCreateManyArgs} args - Arguments to create many WatchItems.
      * @example
-     * // Create many WatchedItems
-     * const watchedItem = await prisma.watchedItem.createMany({
+     * // Create many WatchItems
+     * const watchItem = await prisma.watchItem.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends WatchedItemCreateManyArgs>(args?: SelectSubset<T, WatchedItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends WatchItemCreateManyArgs>(args?: SelectSubset<T, WatchItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many WatchedItems and returns the data saved in the database.
-     * @param {WatchedItemCreateManyAndReturnArgs} args - Arguments to create many WatchedItems.
+     * Create many WatchItems and returns the data saved in the database.
+     * @param {WatchItemCreateManyAndReturnArgs} args - Arguments to create many WatchItems.
      * @example
-     * // Create many WatchedItems
-     * const watchedItem = await prisma.watchedItem.createManyAndReturn({
+     * // Create many WatchItems
+     * const watchItem = await prisma.watchItem.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many WatchedItems and only return the `id`
-     * const watchedItemWithIdOnly = await prisma.watchedItem.createManyAndReturn({
+     * // Create many WatchItems and only return the `id`
+     * const watchItemWithIdOnly = await prisma.watchItem.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2716,28 +2472,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends WatchedItemCreateManyAndReturnArgs>(args?: SelectSubset<T, WatchedItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends WatchItemCreateManyAndReturnArgs>(args?: SelectSubset<T, WatchItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a WatchedItem.
-     * @param {WatchedItemDeleteArgs} args - Arguments to delete one WatchedItem.
+     * Delete a WatchItem.
+     * @param {WatchItemDeleteArgs} args - Arguments to delete one WatchItem.
      * @example
-     * // Delete one WatchedItem
-     * const WatchedItem = await prisma.watchedItem.delete({
+     * // Delete one WatchItem
+     * const WatchItem = await prisma.watchItem.delete({
      *   where: {
-     *     // ... filter to delete one WatchedItem
+     *     // ... filter to delete one WatchItem
      *   }
      * })
      * 
      */
-    delete<T extends WatchedItemDeleteArgs>(args: SelectSubset<T, WatchedItemDeleteArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends WatchItemDeleteArgs>(args: SelectSubset<T, WatchItemDeleteArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one WatchedItem.
-     * @param {WatchedItemUpdateArgs} args - Arguments to update one WatchedItem.
+     * Update one WatchItem.
+     * @param {WatchItemUpdateArgs} args - Arguments to update one WatchItem.
      * @example
-     * // Update one WatchedItem
-     * const watchedItem = await prisma.watchedItem.update({
+     * // Update one WatchItem
+     * const watchItem = await prisma.watchItem.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2747,30 +2503,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends WatchedItemUpdateArgs>(args: SelectSubset<T, WatchedItemUpdateArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends WatchItemUpdateArgs>(args: SelectSubset<T, WatchItemUpdateArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more WatchedItems.
-     * @param {WatchedItemDeleteManyArgs} args - Arguments to filter WatchedItems to delete.
+     * Delete zero or more WatchItems.
+     * @param {WatchItemDeleteManyArgs} args - Arguments to filter WatchItems to delete.
      * @example
-     * // Delete a few WatchedItems
-     * const { count } = await prisma.watchedItem.deleteMany({
+     * // Delete a few WatchItems
+     * const { count } = await prisma.watchItem.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends WatchedItemDeleteManyArgs>(args?: SelectSubset<T, WatchedItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends WatchItemDeleteManyArgs>(args?: SelectSubset<T, WatchItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more WatchedItems.
+     * Update zero or more WatchItems.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {WatchItemUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many WatchedItems
-     * const watchedItem = await prisma.watchedItem.updateMany({
+     * // Update many WatchItems
+     * const watchItem = await prisma.watchItem.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2780,14 +2536,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends WatchedItemUpdateManyArgs>(args: SelectSubset<T, WatchedItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends WatchItemUpdateManyArgs>(args: SelectSubset<T, WatchItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more WatchedItems and returns the data updated in the database.
-     * @param {WatchedItemUpdateManyAndReturnArgs} args - Arguments to update many WatchedItems.
+     * Update zero or more WatchItems and returns the data updated in the database.
+     * @param {WatchItemUpdateManyAndReturnArgs} args - Arguments to update many WatchItems.
      * @example
-     * // Update many WatchedItems
-     * const watchedItem = await prisma.watchedItem.updateManyAndReturn({
+     * // Update many WatchItems
+     * const watchItem = await prisma.watchItem.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2796,8 +2552,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more WatchedItems and only return the `id`
-     * const watchedItemWithIdOnly = await prisma.watchedItem.updateManyAndReturn({
+     * // Update zero or more WatchItems and only return the `id`
+     * const watchItemWithIdOnly = await prisma.watchItem.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2810,56 +2566,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends WatchedItemUpdateManyAndReturnArgs>(args: SelectSubset<T, WatchedItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends WatchItemUpdateManyAndReturnArgs>(args: SelectSubset<T, WatchItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one WatchedItem.
-     * @param {WatchedItemUpsertArgs} args - Arguments to update or create a WatchedItem.
+     * Create or update one WatchItem.
+     * @param {WatchItemUpsertArgs} args - Arguments to update or create a WatchItem.
      * @example
-     * // Update or create a WatchedItem
-     * const watchedItem = await prisma.watchedItem.upsert({
+     * // Update or create a WatchItem
+     * const watchItem = await prisma.watchItem.upsert({
      *   create: {
-     *     // ... data to create a WatchedItem
+     *     // ... data to create a WatchItem
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the WatchedItem we want to update
+     *     // ... the filter for the WatchItem we want to update
      *   }
      * })
      */
-    upsert<T extends WatchedItemUpsertArgs>(args: SelectSubset<T, WatchedItemUpsertArgs<ExtArgs>>): Prisma__WatchedItemClient<$Result.GetResult<Prisma.$WatchedItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends WatchItemUpsertArgs>(args: SelectSubset<T, WatchItemUpsertArgs<ExtArgs>>): Prisma__WatchItemClient<$Result.GetResult<Prisma.$WatchItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of WatchedItems.
+     * Count the number of WatchItems.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemCountArgs} args - Arguments to filter WatchedItems to count.
+     * @param {WatchItemCountArgs} args - Arguments to filter WatchItems to count.
      * @example
-     * // Count the number of WatchedItems
-     * const count = await prisma.watchedItem.count({
+     * // Count the number of WatchItems
+     * const count = await prisma.watchItem.count({
      *   where: {
-     *     // ... the filter for the WatchedItems we want to count
+     *     // ... the filter for the WatchItems we want to count
      *   }
      * })
     **/
-    count<T extends WatchedItemCountArgs>(
-      args?: Subset<T, WatchedItemCountArgs>,
+    count<T extends WatchItemCountArgs>(
+      args?: Subset<T, WatchItemCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], WatchedItemCountAggregateOutputType>
+          : GetScalarType<T['select'], WatchItemCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a WatchedItem.
+     * Allows you to perform aggregations operations on a WatchItem.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {WatchItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2879,13 +2635,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends WatchedItemAggregateArgs>(args: Subset<T, WatchedItemAggregateArgs>): Prisma.PrismaPromise<GetWatchedItemAggregateType<T>>
+    aggregate<T extends WatchItemAggregateArgs>(args: Subset<T, WatchItemAggregateArgs>): Prisma.PrismaPromise<GetWatchItemAggregateType<T>>
 
     /**
-     * Group by WatchedItem.
+     * Group by WatchItem.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchedItemGroupByArgs} args - Group by arguments.
+     * @param {WatchItemGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2900,14 +2656,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends WatchedItemGroupByArgs,
+      T extends WatchItemGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: WatchedItemGroupByArgs['orderBy'] }
-        : { orderBy?: WatchedItemGroupByArgs['orderBy'] },
+        ? { orderBy: WatchItemGroupByArgs['orderBy'] }
+        : { orderBy?: WatchItemGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2956,20 +2712,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, WatchedItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWatchedItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, WatchItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWatchItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the WatchedItem model
+   * Fields of the WatchItem model
    */
-  readonly fields: WatchedItemFieldRefs;
+  readonly fields: WatchItemFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for WatchedItem.
+   * The delegate class that acts as a "Promise-like" for WatchItem.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__WatchedItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__WatchItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
@@ -2998,2627 +2754,416 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the WatchedItem model
+   * Fields of the WatchItem model
    */
-  interface WatchedItemFieldRefs {
-    readonly id: FieldRef<"WatchedItem", 'String'>
-    readonly createdAt: FieldRef<"WatchedItem", 'DateTime'>
-    readonly title: FieldRef<"WatchedItem", 'String'>
-    readonly type: FieldRef<"WatchedItem", 'String'>
-    readonly director: FieldRef<"WatchedItem", 'String'>
-    readonly releaseYear: FieldRef<"WatchedItem", 'Int'>
-    readonly userId: FieldRef<"WatchedItem", 'String'>
+  interface WatchItemFieldRefs {
+    readonly id: FieldRef<"WatchItem", 'String'>
+    readonly createdAt: FieldRef<"WatchItem", 'DateTime'>
+    readonly title: FieldRef<"WatchItem", 'String'>
+    readonly type: FieldRef<"WatchItem", 'String'>
+    readonly director: FieldRef<"WatchItem", 'String'>
+    readonly releaseYear: FieldRef<"WatchItem", 'Int'>
+    readonly isWatched: FieldRef<"WatchItem", 'Boolean'>
+    readonly userId: FieldRef<"WatchItem", 'String'>
   }
     
 
   // Custom InputTypes
   /**
-   * WatchedItem findUnique
+   * WatchItem findUnique
    */
-  export type WatchedItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter, which WatchedItem to fetch.
+     * Filter, which WatchItem to fetch.
      */
-    where: WatchedItemWhereUniqueInput
+    where: WatchItemWhereUniqueInput
   }
 
   /**
-   * WatchedItem findUniqueOrThrow
+   * WatchItem findUniqueOrThrow
    */
-  export type WatchedItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter, which WatchedItem to fetch.
+     * Filter, which WatchItem to fetch.
      */
-    where: WatchedItemWhereUniqueInput
+    where: WatchItemWhereUniqueInput
   }
 
   /**
-   * WatchedItem findFirst
+   * WatchItem findFirst
    */
-  export type WatchedItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter, which WatchedItem to fetch.
+     * Filter, which WatchItem to fetch.
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of WatchedItems to fetch.
+     * Determine the order of WatchItems to fetch.
      */
-    orderBy?: WatchedItemOrderByWithRelationInput | WatchedItemOrderByWithRelationInput[]
+    orderBy?: WatchItemOrderByWithRelationInput | WatchItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for WatchedItems.
+     * Sets the position for searching for WatchItems.
      */
-    cursor?: WatchedItemWhereUniqueInput
+    cursor?: WatchItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` WatchedItems from the position of the cursor.
+     * Take `±n` WatchItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` WatchedItems.
+     * Skip the first `n` WatchItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of WatchedItems.
+     * Filter by unique combinations of WatchItems.
      */
-    distinct?: WatchedItemScalarFieldEnum | WatchedItemScalarFieldEnum[]
+    distinct?: WatchItemScalarFieldEnum | WatchItemScalarFieldEnum[]
   }
 
   /**
-   * WatchedItem findFirstOrThrow
+   * WatchItem findFirstOrThrow
    */
-  export type WatchedItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter, which WatchedItem to fetch.
+     * Filter, which WatchItem to fetch.
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of WatchedItems to fetch.
+     * Determine the order of WatchItems to fetch.
      */
-    orderBy?: WatchedItemOrderByWithRelationInput | WatchedItemOrderByWithRelationInput[]
+    orderBy?: WatchItemOrderByWithRelationInput | WatchItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for WatchedItems.
+     * Sets the position for searching for WatchItems.
      */
-    cursor?: WatchedItemWhereUniqueInput
+    cursor?: WatchItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` WatchedItems from the position of the cursor.
+     * Take `±n` WatchItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` WatchedItems.
+     * Skip the first `n` WatchItems.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of WatchedItems.
+     * Filter by unique combinations of WatchItems.
      */
-    distinct?: WatchedItemScalarFieldEnum | WatchedItemScalarFieldEnum[]
+    distinct?: WatchItemScalarFieldEnum | WatchItemScalarFieldEnum[]
   }
 
   /**
-   * WatchedItem findMany
+   * WatchItem findMany
    */
-  export type WatchedItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter, which WatchedItems to fetch.
+     * Filter, which WatchItems to fetch.
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of WatchedItems to fetch.
+     * Determine the order of WatchItems to fetch.
      */
-    orderBy?: WatchedItemOrderByWithRelationInput | WatchedItemOrderByWithRelationInput[]
+    orderBy?: WatchItemOrderByWithRelationInput | WatchItemOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing WatchedItems.
+     * Sets the position for listing WatchItems.
      */
-    cursor?: WatchedItemWhereUniqueInput
+    cursor?: WatchItemWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` WatchedItems from the position of the cursor.
+     * Take `±n` WatchItems from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` WatchedItems.
+     * Skip the first `n` WatchItems.
      */
     skip?: number
-    distinct?: WatchedItemScalarFieldEnum | WatchedItemScalarFieldEnum[]
+    distinct?: WatchItemScalarFieldEnum | WatchItemScalarFieldEnum[]
   }
 
   /**
-   * WatchedItem create
+   * WatchItem create
    */
-  export type WatchedItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * The data needed to create a WatchedItem.
+     * The data needed to create a WatchItem.
      */
-    data: XOR<WatchedItemCreateInput, WatchedItemUncheckedCreateInput>
+    data: XOR<WatchItemCreateInput, WatchItemUncheckedCreateInput>
   }
 
   /**
-   * WatchedItem createMany
+   * WatchItem createMany
    */
-  export type WatchedItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many WatchedItems.
+     * The data used to create many WatchItems.
      */
-    data: WatchedItemCreateManyInput | WatchedItemCreateManyInput[]
+    data: WatchItemCreateManyInput | WatchItemCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * WatchedItem createManyAndReturn
+   * WatchItem createManyAndReturn
    */
-  export type WatchedItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelectCreateManyAndReturn<ExtArgs> | null
+    select?: WatchItemSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
-     * The data used to create many WatchedItems.
+     * The data used to create many WatchItems.
      */
-    data: WatchedItemCreateManyInput | WatchedItemCreateManyInput[]
+    data: WatchItemCreateManyInput | WatchItemCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: WatchItemIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * WatchedItem update
+   * WatchItem update
    */
-  export type WatchedItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * The data needed to update a WatchedItem.
+     * The data needed to update a WatchItem.
      */
-    data: XOR<WatchedItemUpdateInput, WatchedItemUncheckedUpdateInput>
+    data: XOR<WatchItemUpdateInput, WatchItemUncheckedUpdateInput>
     /**
-     * Choose, which WatchedItem to update.
+     * Choose, which WatchItem to update.
      */
-    where: WatchedItemWhereUniqueInput
+    where: WatchItemWhereUniqueInput
   }
 
   /**
-   * WatchedItem updateMany
+   * WatchItem updateMany
    */
-  export type WatchedItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update WatchedItems.
+     * The data used to update WatchItems.
      */
-    data: XOR<WatchedItemUpdateManyMutationInput, WatchedItemUncheckedUpdateManyInput>
+    data: XOR<WatchItemUpdateManyMutationInput, WatchItemUncheckedUpdateManyInput>
     /**
-     * Filter which WatchedItems to update
+     * Filter which WatchItems to update
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
   }
 
   /**
-   * WatchedItem updateManyAndReturn
+   * WatchItem updateManyAndReturn
    */
-  export type WatchedItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: WatchItemSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
-     * The data used to update WatchedItems.
+     * The data used to update WatchItems.
      */
-    data: XOR<WatchedItemUpdateManyMutationInput, WatchedItemUncheckedUpdateManyInput>
+    data: XOR<WatchItemUpdateManyMutationInput, WatchItemUncheckedUpdateManyInput>
     /**
-     * Filter which WatchedItems to update
+     * Filter which WatchItems to update
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: WatchItemIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * WatchedItem upsert
+   * WatchItem upsert
    */
-  export type WatchedItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * The filter to search for the WatchedItem to update in case it exists.
+     * The filter to search for the WatchItem to update in case it exists.
      */
-    where: WatchedItemWhereUniqueInput
+    where: WatchItemWhereUniqueInput
     /**
-     * In case the WatchedItem found by the `where` argument doesn't exist, create a new WatchedItem with this data.
+     * In case the WatchItem found by the `where` argument doesn't exist, create a new WatchItem with this data.
      */
-    create: XOR<WatchedItemCreateInput, WatchedItemUncheckedCreateInput>
+    create: XOR<WatchItemCreateInput, WatchItemUncheckedCreateInput>
     /**
-     * In case the WatchedItem was found with the provided `where` argument, update it with this data.
+     * In case the WatchItem was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<WatchedItemUpdateInput, WatchedItemUncheckedUpdateInput>
+    update: XOR<WatchItemUpdateInput, WatchItemUncheckedUpdateInput>
   }
 
   /**
-   * WatchedItem delete
+   * WatchItem delete
    */
-  export type WatchedItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
     /**
-     * Filter which WatchedItem to delete.
+     * Filter which WatchItem to delete.
      */
-    where: WatchedItemWhereUniqueInput
+    where: WatchItemWhereUniqueInput
   }
 
   /**
-   * WatchedItem deleteMany
+   * WatchItem deleteMany
    */
-  export type WatchedItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which WatchedItems to delete
+     * Filter which WatchItems to delete
      */
-    where?: WatchedItemWhereInput
+    where?: WatchItemWhereInput
   }
 
   /**
-   * WatchedItem without action
+   * WatchItem without action
    */
-  export type WatchedItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type WatchItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the WatchedItem
+     * Select specific fields to fetch from the WatchItem
      */
-    select?: WatchedItemSelect<ExtArgs> | null
+    select?: WatchItemSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the WatchedItem
+     * Omit specific fields from the WatchItem
      */
-    omit?: WatchedItemOmit<ExtArgs> | null
+    omit?: WatchItemOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: WatchedItemInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model ToWatchItem
-   */
-
-  export type AggregateToWatchItem = {
-    _count: ToWatchItemCountAggregateOutputType | null
-    _avg: ToWatchItemAvgAggregateOutputType | null
-    _sum: ToWatchItemSumAggregateOutputType | null
-    _min: ToWatchItemMinAggregateOutputType | null
-    _max: ToWatchItemMaxAggregateOutputType | null
-  }
-
-  export type ToWatchItemAvgAggregateOutputType = {
-    releaseYear: number | null
-  }
-
-  export type ToWatchItemSumAggregateOutputType = {
-    releaseYear: number | null
-  }
-
-  export type ToWatchItemMinAggregateOutputType = {
-    id: string | null
-    createdAt: Date | null
-    title: string | null
-    type: string | null
-    director: string | null
-    releaseYear: number | null
-    userId: string | null
-  }
-
-  export type ToWatchItemMaxAggregateOutputType = {
-    id: string | null
-    createdAt: Date | null
-    title: string | null
-    type: string | null
-    director: string | null
-    releaseYear: number | null
-    userId: string | null
-  }
-
-  export type ToWatchItemCountAggregateOutputType = {
-    id: number
-    createdAt: number
-    title: number
-    type: number
-    director: number
-    releaseYear: number
-    userId: number
-    _all: number
-  }
-
-
-  export type ToWatchItemAvgAggregateInputType = {
-    releaseYear?: true
-  }
-
-  export type ToWatchItemSumAggregateInputType = {
-    releaseYear?: true
-  }
-
-  export type ToWatchItemMinAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-  }
-
-  export type ToWatchItemMaxAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-  }
-
-  export type ToWatchItemCountAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-    _all?: true
-  }
-
-  export type ToWatchItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ToWatchItem to aggregate.
-     */
-    where?: ToWatchItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ToWatchItems to fetch.
-     */
-    orderBy?: ToWatchItemOrderByWithRelationInput | ToWatchItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: ToWatchItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ToWatchItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ToWatchItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned ToWatchItems
-    **/
-    _count?: true | ToWatchItemCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: ToWatchItemAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ToWatchItemSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: ToWatchItemMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: ToWatchItemMaxAggregateInputType
-  }
-
-  export type GetToWatchItemAggregateType<T extends ToWatchItemAggregateArgs> = {
-        [P in keyof T & keyof AggregateToWatchItem]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateToWatchItem[P]>
-      : GetScalarType<T[P], AggregateToWatchItem[P]>
-  }
-
-
-
-
-  export type ToWatchItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ToWatchItemWhereInput
-    orderBy?: ToWatchItemOrderByWithAggregationInput | ToWatchItemOrderByWithAggregationInput[]
-    by: ToWatchItemScalarFieldEnum[] | ToWatchItemScalarFieldEnum
-    having?: ToWatchItemScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: ToWatchItemCountAggregateInputType | true
-    _avg?: ToWatchItemAvgAggregateInputType
-    _sum?: ToWatchItemSumAggregateInputType
-    _min?: ToWatchItemMinAggregateInputType
-    _max?: ToWatchItemMaxAggregateInputType
-  }
-
-  export type ToWatchItemGroupByOutputType = {
-    id: string
-    createdAt: Date
-    title: string
-    type: string
-    director: string | null
-    releaseYear: number | null
-    userId: string
-    _count: ToWatchItemCountAggregateOutputType | null
-    _avg: ToWatchItemAvgAggregateOutputType | null
-    _sum: ToWatchItemSumAggregateOutputType | null
-    _min: ToWatchItemMinAggregateOutputType | null
-    _max: ToWatchItemMaxAggregateOutputType | null
-  }
-
-  type GetToWatchItemGroupByPayload<T extends ToWatchItemGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<ToWatchItemGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof ToWatchItemGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], ToWatchItemGroupByOutputType[P]>
-            : GetScalarType<T[P], ToWatchItemGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type ToWatchItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["toWatchItem"]>
-
-  export type ToWatchItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["toWatchItem"]>
-
-  export type ToWatchItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["toWatchItem"]>
-
-  export type ToWatchItemSelectScalar = {
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-  }
-
-  export type ToWatchItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "title" | "type" | "director" | "releaseYear" | "userId", ExtArgs["result"]["toWatchItem"]>
-  export type ToWatchItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type ToWatchItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type ToWatchItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-
-  export type $ToWatchItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "ToWatchItem"
-    objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      createdAt: Date
-      title: string
-      type: string
-      director: string | null
-      releaseYear: number | null
-      userId: string
-    }, ExtArgs["result"]["toWatchItem"]>
-    composites: {}
-  }
-
-  type ToWatchItemGetPayload<S extends boolean | null | undefined | ToWatchItemDefaultArgs> = $Result.GetResult<Prisma.$ToWatchItemPayload, S>
-
-  type ToWatchItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<ToWatchItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: ToWatchItemCountAggregateInputType | true
-    }
-
-  export interface ToWatchItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ToWatchItem'], meta: { name: 'ToWatchItem' } }
-    /**
-     * Find zero or one ToWatchItem that matches the filter.
-     * @param {ToWatchItemFindUniqueArgs} args - Arguments to find a ToWatchItem
-     * @example
-     * // Get one ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends ToWatchItemFindUniqueArgs>(args: SelectSubset<T, ToWatchItemFindUniqueArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one ToWatchItem that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {ToWatchItemFindUniqueOrThrowArgs} args - Arguments to find a ToWatchItem
-     * @example
-     * // Get one ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends ToWatchItemFindUniqueOrThrowArgs>(args: SelectSubset<T, ToWatchItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first ToWatchItem that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemFindFirstArgs} args - Arguments to find a ToWatchItem
-     * @example
-     * // Get one ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends ToWatchItemFindFirstArgs>(args?: SelectSubset<T, ToWatchItemFindFirstArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first ToWatchItem that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemFindFirstOrThrowArgs} args - Arguments to find a ToWatchItem
-     * @example
-     * // Get one ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends ToWatchItemFindFirstOrThrowArgs>(args?: SelectSubset<T, ToWatchItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more ToWatchItems that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all ToWatchItems
-     * const toWatchItems = await prisma.toWatchItem.findMany()
-     * 
-     * // Get first 10 ToWatchItems
-     * const toWatchItems = await prisma.toWatchItem.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const toWatchItemWithIdOnly = await prisma.toWatchItem.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends ToWatchItemFindManyArgs>(args?: SelectSubset<T, ToWatchItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a ToWatchItem.
-     * @param {ToWatchItemCreateArgs} args - Arguments to create a ToWatchItem.
-     * @example
-     * // Create one ToWatchItem
-     * const ToWatchItem = await prisma.toWatchItem.create({
-     *   data: {
-     *     // ... data to create a ToWatchItem
-     *   }
-     * })
-     * 
-     */
-    create<T extends ToWatchItemCreateArgs>(args: SelectSubset<T, ToWatchItemCreateArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many ToWatchItems.
-     * @param {ToWatchItemCreateManyArgs} args - Arguments to create many ToWatchItems.
-     * @example
-     * // Create many ToWatchItems
-     * const toWatchItem = await prisma.toWatchItem.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends ToWatchItemCreateManyArgs>(args?: SelectSubset<T, ToWatchItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many ToWatchItems and returns the data saved in the database.
-     * @param {ToWatchItemCreateManyAndReturnArgs} args - Arguments to create many ToWatchItems.
-     * @example
-     * // Create many ToWatchItems
-     * const toWatchItem = await prisma.toWatchItem.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many ToWatchItems and only return the `id`
-     * const toWatchItemWithIdOnly = await prisma.toWatchItem.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends ToWatchItemCreateManyAndReturnArgs>(args?: SelectSubset<T, ToWatchItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a ToWatchItem.
-     * @param {ToWatchItemDeleteArgs} args - Arguments to delete one ToWatchItem.
-     * @example
-     * // Delete one ToWatchItem
-     * const ToWatchItem = await prisma.toWatchItem.delete({
-     *   where: {
-     *     // ... filter to delete one ToWatchItem
-     *   }
-     * })
-     * 
-     */
-    delete<T extends ToWatchItemDeleteArgs>(args: SelectSubset<T, ToWatchItemDeleteArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one ToWatchItem.
-     * @param {ToWatchItemUpdateArgs} args - Arguments to update one ToWatchItem.
-     * @example
-     * // Update one ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends ToWatchItemUpdateArgs>(args: SelectSubset<T, ToWatchItemUpdateArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more ToWatchItems.
-     * @param {ToWatchItemDeleteManyArgs} args - Arguments to filter ToWatchItems to delete.
-     * @example
-     * // Delete a few ToWatchItems
-     * const { count } = await prisma.toWatchItem.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends ToWatchItemDeleteManyArgs>(args?: SelectSubset<T, ToWatchItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ToWatchItems.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many ToWatchItems
-     * const toWatchItem = await prisma.toWatchItem.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends ToWatchItemUpdateManyArgs>(args: SelectSubset<T, ToWatchItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more ToWatchItems and returns the data updated in the database.
-     * @param {ToWatchItemUpdateManyAndReturnArgs} args - Arguments to update many ToWatchItems.
-     * @example
-     * // Update many ToWatchItems
-     * const toWatchItem = await prisma.toWatchItem.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more ToWatchItems and only return the `id`
-     * const toWatchItemWithIdOnly = await prisma.toWatchItem.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends ToWatchItemUpdateManyAndReturnArgs>(args: SelectSubset<T, ToWatchItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one ToWatchItem.
-     * @param {ToWatchItemUpsertArgs} args - Arguments to update or create a ToWatchItem.
-     * @example
-     * // Update or create a ToWatchItem
-     * const toWatchItem = await prisma.toWatchItem.upsert({
-     *   create: {
-     *     // ... data to create a ToWatchItem
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the ToWatchItem we want to update
-     *   }
-     * })
-     */
-    upsert<T extends ToWatchItemUpsertArgs>(args: SelectSubset<T, ToWatchItemUpsertArgs<ExtArgs>>): Prisma__ToWatchItemClient<$Result.GetResult<Prisma.$ToWatchItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of ToWatchItems.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemCountArgs} args - Arguments to filter ToWatchItems to count.
-     * @example
-     * // Count the number of ToWatchItems
-     * const count = await prisma.toWatchItem.count({
-     *   where: {
-     *     // ... the filter for the ToWatchItems we want to count
-     *   }
-     * })
-    **/
-    count<T extends ToWatchItemCountArgs>(
-      args?: Subset<T, ToWatchItemCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], ToWatchItemCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a ToWatchItem.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends ToWatchItemAggregateArgs>(args: Subset<T, ToWatchItemAggregateArgs>): Prisma.PrismaPromise<GetToWatchItemAggregateType<T>>
-
-    /**
-     * Group by ToWatchItem.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {ToWatchItemGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends ToWatchItemGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: ToWatchItemGroupByArgs['orderBy'] }
-        : { orderBy?: ToWatchItemGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, ToWatchItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetToWatchItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the ToWatchItem model
-   */
-  readonly fields: ToWatchItemFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for ToWatchItem.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__ToWatchItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the ToWatchItem model
-   */
-  interface ToWatchItemFieldRefs {
-    readonly id: FieldRef<"ToWatchItem", 'String'>
-    readonly createdAt: FieldRef<"ToWatchItem", 'DateTime'>
-    readonly title: FieldRef<"ToWatchItem", 'String'>
-    readonly type: FieldRef<"ToWatchItem", 'String'>
-    readonly director: FieldRef<"ToWatchItem", 'String'>
-    readonly releaseYear: FieldRef<"ToWatchItem", 'Int'>
-    readonly userId: FieldRef<"ToWatchItem", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * ToWatchItem findUnique
-   */
-  export type ToWatchItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter, which ToWatchItem to fetch.
-     */
-    where: ToWatchItemWhereUniqueInput
-  }
-
-  /**
-   * ToWatchItem findUniqueOrThrow
-   */
-  export type ToWatchItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter, which ToWatchItem to fetch.
-     */
-    where: ToWatchItemWhereUniqueInput
-  }
-
-  /**
-   * ToWatchItem findFirst
-   */
-  export type ToWatchItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter, which ToWatchItem to fetch.
-     */
-    where?: ToWatchItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ToWatchItems to fetch.
-     */
-    orderBy?: ToWatchItemOrderByWithRelationInput | ToWatchItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ToWatchItems.
-     */
-    cursor?: ToWatchItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ToWatchItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ToWatchItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ToWatchItems.
-     */
-    distinct?: ToWatchItemScalarFieldEnum | ToWatchItemScalarFieldEnum[]
-  }
-
-  /**
-   * ToWatchItem findFirstOrThrow
-   */
-  export type ToWatchItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter, which ToWatchItem to fetch.
-     */
-    where?: ToWatchItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ToWatchItems to fetch.
-     */
-    orderBy?: ToWatchItemOrderByWithRelationInput | ToWatchItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for ToWatchItems.
-     */
-    cursor?: ToWatchItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ToWatchItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ToWatchItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of ToWatchItems.
-     */
-    distinct?: ToWatchItemScalarFieldEnum | ToWatchItemScalarFieldEnum[]
-  }
-
-  /**
-   * ToWatchItem findMany
-   */
-  export type ToWatchItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter, which ToWatchItems to fetch.
-     */
-    where?: ToWatchItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of ToWatchItems to fetch.
-     */
-    orderBy?: ToWatchItemOrderByWithRelationInput | ToWatchItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing ToWatchItems.
-     */
-    cursor?: ToWatchItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` ToWatchItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` ToWatchItems.
-     */
-    skip?: number
-    distinct?: ToWatchItemScalarFieldEnum | ToWatchItemScalarFieldEnum[]
-  }
-
-  /**
-   * ToWatchItem create
-   */
-  export type ToWatchItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * The data needed to create a ToWatchItem.
-     */
-    data: XOR<ToWatchItemCreateInput, ToWatchItemUncheckedCreateInput>
-  }
-
-  /**
-   * ToWatchItem createMany
-   */
-  export type ToWatchItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many ToWatchItems.
-     */
-    data: ToWatchItemCreateManyInput | ToWatchItemCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * ToWatchItem createManyAndReturn
-   */
-  export type ToWatchItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * The data used to create many ToWatchItems.
-     */
-    data: ToWatchItemCreateManyInput | ToWatchItemCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * ToWatchItem update
-   */
-  export type ToWatchItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * The data needed to update a ToWatchItem.
-     */
-    data: XOR<ToWatchItemUpdateInput, ToWatchItemUncheckedUpdateInput>
-    /**
-     * Choose, which ToWatchItem to update.
-     */
-    where: ToWatchItemWhereUniqueInput
-  }
-
-  /**
-   * ToWatchItem updateMany
-   */
-  export type ToWatchItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update ToWatchItems.
-     */
-    data: XOR<ToWatchItemUpdateManyMutationInput, ToWatchItemUncheckedUpdateManyInput>
-    /**
-     * Filter which ToWatchItems to update
-     */
-    where?: ToWatchItemWhereInput
-  }
-
-  /**
-   * ToWatchItem updateManyAndReturn
-   */
-  export type ToWatchItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * The data used to update ToWatchItems.
-     */
-    data: XOR<ToWatchItemUpdateManyMutationInput, ToWatchItemUncheckedUpdateManyInput>
-    /**
-     * Filter which ToWatchItems to update
-     */
-    where?: ToWatchItemWhereInput
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * ToWatchItem upsert
-   */
-  export type ToWatchItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * The filter to search for the ToWatchItem to update in case it exists.
-     */
-    where: ToWatchItemWhereUniqueInput
-    /**
-     * In case the ToWatchItem found by the `where` argument doesn't exist, create a new ToWatchItem with this data.
-     */
-    create: XOR<ToWatchItemCreateInput, ToWatchItemUncheckedCreateInput>
-    /**
-     * In case the ToWatchItem was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<ToWatchItemUpdateInput, ToWatchItemUncheckedUpdateInput>
-  }
-
-  /**
-   * ToWatchItem delete
-   */
-  export type ToWatchItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-    /**
-     * Filter which ToWatchItem to delete.
-     */
-    where: ToWatchItemWhereUniqueInput
-  }
-
-  /**
-   * ToWatchItem deleteMany
-   */
-  export type ToWatchItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which ToWatchItems to delete
-     */
-    where?: ToWatchItemWhereInput
-  }
-
-  /**
-   * ToWatchItem without action
-   */
-  export type ToWatchItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ToWatchItem
-     */
-    select?: ToWatchItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ToWatchItem
-     */
-    omit?: ToWatchItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ToWatchItemInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model WatchingItem
-   */
-
-  export type AggregateWatchingItem = {
-    _count: WatchingItemCountAggregateOutputType | null
-    _avg: WatchingItemAvgAggregateOutputType | null
-    _sum: WatchingItemSumAggregateOutputType | null
-    _min: WatchingItemMinAggregateOutputType | null
-    _max: WatchingItemMaxAggregateOutputType | null
-  }
-
-  export type WatchingItemAvgAggregateOutputType = {
-    releaseYear: number | null
-  }
-
-  export type WatchingItemSumAggregateOutputType = {
-    releaseYear: number | null
-  }
-
-  export type WatchingItemMinAggregateOutputType = {
-    id: string | null
-    createdAt: Date | null
-    title: string | null
-    type: string | null
-    director: string | null
-    releaseYear: number | null
-    userId: string | null
-  }
-
-  export type WatchingItemMaxAggregateOutputType = {
-    id: string | null
-    createdAt: Date | null
-    title: string | null
-    type: string | null
-    director: string | null
-    releaseYear: number | null
-    userId: string | null
-  }
-
-  export type WatchingItemCountAggregateOutputType = {
-    id: number
-    createdAt: number
-    title: number
-    type: number
-    director: number
-    releaseYear: number
-    userId: number
-    _all: number
-  }
-
-
-  export type WatchingItemAvgAggregateInputType = {
-    releaseYear?: true
-  }
-
-  export type WatchingItemSumAggregateInputType = {
-    releaseYear?: true
-  }
-
-  export type WatchingItemMinAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-  }
-
-  export type WatchingItemMaxAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-  }
-
-  export type WatchingItemCountAggregateInputType = {
-    id?: true
-    createdAt?: true
-    title?: true
-    type?: true
-    director?: true
-    releaseYear?: true
-    userId?: true
-    _all?: true
-  }
-
-  export type WatchingItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which WatchingItem to aggregate.
-     */
-    where?: WatchingItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WatchingItems to fetch.
-     */
-    orderBy?: WatchingItemOrderByWithRelationInput | WatchingItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: WatchingItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WatchingItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WatchingItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned WatchingItems
-    **/
-    _count?: true | WatchingItemCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: WatchingItemAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: WatchingItemSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: WatchingItemMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: WatchingItemMaxAggregateInputType
-  }
-
-  export type GetWatchingItemAggregateType<T extends WatchingItemAggregateArgs> = {
-        [P in keyof T & keyof AggregateWatchingItem]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateWatchingItem[P]>
-      : GetScalarType<T[P], AggregateWatchingItem[P]>
-  }
-
-
-
-
-  export type WatchingItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: WatchingItemWhereInput
-    orderBy?: WatchingItemOrderByWithAggregationInput | WatchingItemOrderByWithAggregationInput[]
-    by: WatchingItemScalarFieldEnum[] | WatchingItemScalarFieldEnum
-    having?: WatchingItemScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: WatchingItemCountAggregateInputType | true
-    _avg?: WatchingItemAvgAggregateInputType
-    _sum?: WatchingItemSumAggregateInputType
-    _min?: WatchingItemMinAggregateInputType
-    _max?: WatchingItemMaxAggregateInputType
-  }
-
-  export type WatchingItemGroupByOutputType = {
-    id: string
-    createdAt: Date
-    title: string
-    type: string
-    director: string | null
-    releaseYear: number | null
-    userId: string
-    _count: WatchingItemCountAggregateOutputType | null
-    _avg: WatchingItemAvgAggregateOutputType | null
-    _sum: WatchingItemSumAggregateOutputType | null
-    _min: WatchingItemMinAggregateOutputType | null
-    _max: WatchingItemMaxAggregateOutputType | null
-  }
-
-  type GetWatchingItemGroupByPayload<T extends WatchingItemGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<WatchingItemGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof WatchingItemGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], WatchingItemGroupByOutputType[P]>
-            : GetScalarType<T[P], WatchingItemGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type WatchingItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchingItem"]>
-
-  export type WatchingItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchingItem"]>
-
-  export type WatchingItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["watchingItem"]>
-
-  export type WatchingItemSelectScalar = {
-    id?: boolean
-    createdAt?: boolean
-    title?: boolean
-    type?: boolean
-    director?: boolean
-    releaseYear?: boolean
-    userId?: boolean
-  }
-
-  export type WatchingItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "title" | "type" | "director" | "releaseYear" | "userId", ExtArgs["result"]["watchingItem"]>
-  export type WatchingItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type WatchingItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type WatchingItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-  }
-
-  export type $WatchingItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "WatchingItem"
-    objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      createdAt: Date
-      title: string
-      type: string
-      director: string | null
-      releaseYear: number | null
-      userId: string
-    }, ExtArgs["result"]["watchingItem"]>
-    composites: {}
-  }
-
-  type WatchingItemGetPayload<S extends boolean | null | undefined | WatchingItemDefaultArgs> = $Result.GetResult<Prisma.$WatchingItemPayload, S>
-
-  type WatchingItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<WatchingItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: WatchingItemCountAggregateInputType | true
-    }
-
-  export interface WatchingItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WatchingItem'], meta: { name: 'WatchingItem' } }
-    /**
-     * Find zero or one WatchingItem that matches the filter.
-     * @param {WatchingItemFindUniqueArgs} args - Arguments to find a WatchingItem
-     * @example
-     * // Get one WatchingItem
-     * const watchingItem = await prisma.watchingItem.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends WatchingItemFindUniqueArgs>(args: SelectSubset<T, WatchingItemFindUniqueArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one WatchingItem that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {WatchingItemFindUniqueOrThrowArgs} args - Arguments to find a WatchingItem
-     * @example
-     * // Get one WatchingItem
-     * const watchingItem = await prisma.watchingItem.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends WatchingItemFindUniqueOrThrowArgs>(args: SelectSubset<T, WatchingItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first WatchingItem that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemFindFirstArgs} args - Arguments to find a WatchingItem
-     * @example
-     * // Get one WatchingItem
-     * const watchingItem = await prisma.watchingItem.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends WatchingItemFindFirstArgs>(args?: SelectSubset<T, WatchingItemFindFirstArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first WatchingItem that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemFindFirstOrThrowArgs} args - Arguments to find a WatchingItem
-     * @example
-     * // Get one WatchingItem
-     * const watchingItem = await prisma.watchingItem.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends WatchingItemFindFirstOrThrowArgs>(args?: SelectSubset<T, WatchingItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more WatchingItems that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all WatchingItems
-     * const watchingItems = await prisma.watchingItem.findMany()
-     * 
-     * // Get first 10 WatchingItems
-     * const watchingItems = await prisma.watchingItem.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const watchingItemWithIdOnly = await prisma.watchingItem.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends WatchingItemFindManyArgs>(args?: SelectSubset<T, WatchingItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a WatchingItem.
-     * @param {WatchingItemCreateArgs} args - Arguments to create a WatchingItem.
-     * @example
-     * // Create one WatchingItem
-     * const WatchingItem = await prisma.watchingItem.create({
-     *   data: {
-     *     // ... data to create a WatchingItem
-     *   }
-     * })
-     * 
-     */
-    create<T extends WatchingItemCreateArgs>(args: SelectSubset<T, WatchingItemCreateArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many WatchingItems.
-     * @param {WatchingItemCreateManyArgs} args - Arguments to create many WatchingItems.
-     * @example
-     * // Create many WatchingItems
-     * const watchingItem = await prisma.watchingItem.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends WatchingItemCreateManyArgs>(args?: SelectSubset<T, WatchingItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many WatchingItems and returns the data saved in the database.
-     * @param {WatchingItemCreateManyAndReturnArgs} args - Arguments to create many WatchingItems.
-     * @example
-     * // Create many WatchingItems
-     * const watchingItem = await prisma.watchingItem.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many WatchingItems and only return the `id`
-     * const watchingItemWithIdOnly = await prisma.watchingItem.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends WatchingItemCreateManyAndReturnArgs>(args?: SelectSubset<T, WatchingItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a WatchingItem.
-     * @param {WatchingItemDeleteArgs} args - Arguments to delete one WatchingItem.
-     * @example
-     * // Delete one WatchingItem
-     * const WatchingItem = await prisma.watchingItem.delete({
-     *   where: {
-     *     // ... filter to delete one WatchingItem
-     *   }
-     * })
-     * 
-     */
-    delete<T extends WatchingItemDeleteArgs>(args: SelectSubset<T, WatchingItemDeleteArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one WatchingItem.
-     * @param {WatchingItemUpdateArgs} args - Arguments to update one WatchingItem.
-     * @example
-     * // Update one WatchingItem
-     * const watchingItem = await prisma.watchingItem.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends WatchingItemUpdateArgs>(args: SelectSubset<T, WatchingItemUpdateArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more WatchingItems.
-     * @param {WatchingItemDeleteManyArgs} args - Arguments to filter WatchingItems to delete.
-     * @example
-     * // Delete a few WatchingItems
-     * const { count } = await prisma.watchingItem.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends WatchingItemDeleteManyArgs>(args?: SelectSubset<T, WatchingItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more WatchingItems.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many WatchingItems
-     * const watchingItem = await prisma.watchingItem.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends WatchingItemUpdateManyArgs>(args: SelectSubset<T, WatchingItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more WatchingItems and returns the data updated in the database.
-     * @param {WatchingItemUpdateManyAndReturnArgs} args - Arguments to update many WatchingItems.
-     * @example
-     * // Update many WatchingItems
-     * const watchingItem = await prisma.watchingItem.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more WatchingItems and only return the `id`
-     * const watchingItemWithIdOnly = await prisma.watchingItem.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends WatchingItemUpdateManyAndReturnArgs>(args: SelectSubset<T, WatchingItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one WatchingItem.
-     * @param {WatchingItemUpsertArgs} args - Arguments to update or create a WatchingItem.
-     * @example
-     * // Update or create a WatchingItem
-     * const watchingItem = await prisma.watchingItem.upsert({
-     *   create: {
-     *     // ... data to create a WatchingItem
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the WatchingItem we want to update
-     *   }
-     * })
-     */
-    upsert<T extends WatchingItemUpsertArgs>(args: SelectSubset<T, WatchingItemUpsertArgs<ExtArgs>>): Prisma__WatchingItemClient<$Result.GetResult<Prisma.$WatchingItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of WatchingItems.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemCountArgs} args - Arguments to filter WatchingItems to count.
-     * @example
-     * // Count the number of WatchingItems
-     * const count = await prisma.watchingItem.count({
-     *   where: {
-     *     // ... the filter for the WatchingItems we want to count
-     *   }
-     * })
-    **/
-    count<T extends WatchingItemCountArgs>(
-      args?: Subset<T, WatchingItemCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], WatchingItemCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a WatchingItem.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends WatchingItemAggregateArgs>(args: Subset<T, WatchingItemAggregateArgs>): Prisma.PrismaPromise<GetWatchingItemAggregateType<T>>
-
-    /**
-     * Group by WatchingItem.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {WatchingItemGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends WatchingItemGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: WatchingItemGroupByArgs['orderBy'] }
-        : { orderBy?: WatchingItemGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, WatchingItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWatchingItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the WatchingItem model
-   */
-  readonly fields: WatchingItemFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for WatchingItem.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__WatchingItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the WatchingItem model
-   */
-  interface WatchingItemFieldRefs {
-    readonly id: FieldRef<"WatchingItem", 'String'>
-    readonly createdAt: FieldRef<"WatchingItem", 'DateTime'>
-    readonly title: FieldRef<"WatchingItem", 'String'>
-    readonly type: FieldRef<"WatchingItem", 'String'>
-    readonly director: FieldRef<"WatchingItem", 'String'>
-    readonly releaseYear: FieldRef<"WatchingItem", 'Int'>
-    readonly userId: FieldRef<"WatchingItem", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * WatchingItem findUnique
-   */
-  export type WatchingItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter, which WatchingItem to fetch.
-     */
-    where: WatchingItemWhereUniqueInput
-  }
-
-  /**
-   * WatchingItem findUniqueOrThrow
-   */
-  export type WatchingItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter, which WatchingItem to fetch.
-     */
-    where: WatchingItemWhereUniqueInput
-  }
-
-  /**
-   * WatchingItem findFirst
-   */
-  export type WatchingItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter, which WatchingItem to fetch.
-     */
-    where?: WatchingItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WatchingItems to fetch.
-     */
-    orderBy?: WatchingItemOrderByWithRelationInput | WatchingItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for WatchingItems.
-     */
-    cursor?: WatchingItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WatchingItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WatchingItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of WatchingItems.
-     */
-    distinct?: WatchingItemScalarFieldEnum | WatchingItemScalarFieldEnum[]
-  }
-
-  /**
-   * WatchingItem findFirstOrThrow
-   */
-  export type WatchingItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter, which WatchingItem to fetch.
-     */
-    where?: WatchingItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WatchingItems to fetch.
-     */
-    orderBy?: WatchingItemOrderByWithRelationInput | WatchingItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for WatchingItems.
-     */
-    cursor?: WatchingItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WatchingItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WatchingItems.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of WatchingItems.
-     */
-    distinct?: WatchingItemScalarFieldEnum | WatchingItemScalarFieldEnum[]
-  }
-
-  /**
-   * WatchingItem findMany
-   */
-  export type WatchingItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter, which WatchingItems to fetch.
-     */
-    where?: WatchingItemWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of WatchingItems to fetch.
-     */
-    orderBy?: WatchingItemOrderByWithRelationInput | WatchingItemOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing WatchingItems.
-     */
-    cursor?: WatchingItemWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` WatchingItems from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` WatchingItems.
-     */
-    skip?: number
-    distinct?: WatchingItemScalarFieldEnum | WatchingItemScalarFieldEnum[]
-  }
-
-  /**
-   * WatchingItem create
-   */
-  export type WatchingItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * The data needed to create a WatchingItem.
-     */
-    data: XOR<WatchingItemCreateInput, WatchingItemUncheckedCreateInput>
-  }
-
-  /**
-   * WatchingItem createMany
-   */
-  export type WatchingItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many WatchingItems.
-     */
-    data: WatchingItemCreateManyInput | WatchingItemCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * WatchingItem createManyAndReturn
-   */
-  export type WatchingItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * The data used to create many WatchingItems.
-     */
-    data: WatchingItemCreateManyInput | WatchingItemCreateManyInput[]
-    skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemIncludeCreateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * WatchingItem update
-   */
-  export type WatchingItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * The data needed to update a WatchingItem.
-     */
-    data: XOR<WatchingItemUpdateInput, WatchingItemUncheckedUpdateInput>
-    /**
-     * Choose, which WatchingItem to update.
-     */
-    where: WatchingItemWhereUniqueInput
-  }
-
-  /**
-   * WatchingItem updateMany
-   */
-  export type WatchingItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update WatchingItems.
-     */
-    data: XOR<WatchingItemUpdateManyMutationInput, WatchingItemUncheckedUpdateManyInput>
-    /**
-     * Filter which WatchingItems to update
-     */
-    where?: WatchingItemWhereInput
-  }
-
-  /**
-   * WatchingItem updateManyAndReturn
-   */
-  export type WatchingItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * The data used to update WatchingItems.
-     */
-    data: XOR<WatchingItemUpdateManyMutationInput, WatchingItemUncheckedUpdateManyInput>
-    /**
-     * Filter which WatchingItems to update
-     */
-    where?: WatchingItemWhereInput
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * WatchingItem upsert
-   */
-  export type WatchingItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * The filter to search for the WatchingItem to update in case it exists.
-     */
-    where: WatchingItemWhereUniqueInput
-    /**
-     * In case the WatchingItem found by the `where` argument doesn't exist, create a new WatchingItem with this data.
-     */
-    create: XOR<WatchingItemCreateInput, WatchingItemUncheckedCreateInput>
-    /**
-     * In case the WatchingItem was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<WatchingItemUpdateInput, WatchingItemUncheckedUpdateInput>
-  }
-
-  /**
-   * WatchingItem delete
-   */
-  export type WatchingItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
-    /**
-     * Filter which WatchingItem to delete.
-     */
-    where: WatchingItemWhereUniqueInput
-  }
-
-  /**
-   * WatchingItem deleteMany
-   */
-  export type WatchingItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which WatchingItems to delete
-     */
-    where?: WatchingItemWhereInput
-  }
-
-  /**
-   * WatchingItem without action
-   */
-  export type WatchingItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the WatchingItem
-     */
-    select?: WatchingItemSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the WatchingItem
-     */
-    omit?: WatchingItemOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: WatchingItemInclude<ExtArgs> | null
+    include?: WatchItemInclude<ExtArgs> | null
   }
 
 
@@ -5648,43 +3193,18 @@ export namespace Prisma {
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const WatchedItemScalarFieldEnum: {
+  export const WatchItemScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
     title: 'title',
     type: 'type',
     director: 'director',
     releaseYear: 'releaseYear',
+    isWatched: 'isWatched',
     userId: 'userId'
   };
 
-  export type WatchedItemScalarFieldEnum = (typeof WatchedItemScalarFieldEnum)[keyof typeof WatchedItemScalarFieldEnum]
-
-
-  export const ToWatchItemScalarFieldEnum: {
-    id: 'id',
-    createdAt: 'createdAt',
-    title: 'title',
-    type: 'type',
-    director: 'director',
-    releaseYear: 'releaseYear',
-    userId: 'userId'
-  };
-
-  export type ToWatchItemScalarFieldEnum = (typeof ToWatchItemScalarFieldEnum)[keyof typeof ToWatchItemScalarFieldEnum]
-
-
-  export const WatchingItemScalarFieldEnum: {
-    id: 'id',
-    createdAt: 'createdAt',
-    title: 'title',
-    type: 'type',
-    director: 'director',
-    releaseYear: 'releaseYear',
-    userId: 'userId'
-  };
-
-  export type WatchingItemScalarFieldEnum = (typeof WatchingItemScalarFieldEnum)[keyof typeof WatchingItemScalarFieldEnum]
+  export type WatchItemScalarFieldEnum = (typeof WatchItemScalarFieldEnum)[keyof typeof WatchItemScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -5759,6 +3279,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -5785,9 +3312,7 @@ export namespace Prisma {
     email?: StringFilter<"User"> | string
     name?: StringNullableFilter<"User"> | string | null
     password?: StringFilter<"User"> | string
-    watchedItems?: WatchedItemListRelationFilter
-    toWatchItems?: ToWatchItemListRelationFilter
-    watchingItems?: WatchingItemListRelationFilter
+    watchItems?: WatchItemListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -5797,9 +3322,7 @@ export namespace Prisma {
     email?: SortOrder
     name?: SortOrderInput | SortOrder
     password?: SortOrder
-    watchedItems?: WatchedItemOrderByRelationAggregateInput
-    toWatchItems?: ToWatchItemOrderByRelationAggregateInput
-    watchingItems?: WatchingItemOrderByRelationAggregateInput
+    watchItems?: WatchItemOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -5812,9 +3335,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"User"> | Date | string
     name?: StringNullableFilter<"User"> | string | null
     password?: StringFilter<"User"> | string
-    watchedItems?: WatchedItemListRelationFilter
-    toWatchItems?: ToWatchItemListRelationFilter
-    watchingItems?: WatchingItemListRelationFilter
+    watchItems?: WatchItemListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -5841,205 +3362,76 @@ export namespace Prisma {
     password?: StringWithAggregatesFilter<"User"> | string
   }
 
-  export type WatchedItemWhereInput = {
-    AND?: WatchedItemWhereInput | WatchedItemWhereInput[]
-    OR?: WatchedItemWhereInput[]
-    NOT?: WatchedItemWhereInput | WatchedItemWhereInput[]
-    id?: StringFilter<"WatchedItem"> | string
-    createdAt?: DateTimeFilter<"WatchedItem"> | Date | string
-    title?: StringFilter<"WatchedItem"> | string
-    type?: StringFilter<"WatchedItem"> | string
-    director?: StringNullableFilter<"WatchedItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchedItem"> | number | null
-    userId?: StringFilter<"WatchedItem"> | string
+  export type WatchItemWhereInput = {
+    AND?: WatchItemWhereInput | WatchItemWhereInput[]
+    OR?: WatchItemWhereInput[]
+    NOT?: WatchItemWhereInput | WatchItemWhereInput[]
+    id?: StringFilter<"WatchItem"> | string
+    createdAt?: DateTimeFilter<"WatchItem"> | Date | string
+    title?: StringFilter<"WatchItem"> | string
+    type?: StringFilter<"WatchItem"> | string
+    director?: StringFilter<"WatchItem"> | string
+    releaseYear?: IntFilter<"WatchItem"> | number
+    isWatched?: BoolFilter<"WatchItem"> | boolean
+    userId?: StringFilter<"WatchItem"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type WatchedItemOrderByWithRelationInput = {
+  export type WatchItemOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
     title?: SortOrder
     type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
+    director?: SortOrder
+    releaseYear?: SortOrder
+    isWatched?: SortOrder
     userId?: SortOrder
     user?: UserOrderByWithRelationInput
   }
 
-  export type WatchedItemWhereUniqueInput = Prisma.AtLeast<{
+  export type WatchItemWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: WatchedItemWhereInput | WatchedItemWhereInput[]
-    OR?: WatchedItemWhereInput[]
-    NOT?: WatchedItemWhereInput | WatchedItemWhereInput[]
-    createdAt?: DateTimeFilter<"WatchedItem"> | Date | string
-    title?: StringFilter<"WatchedItem"> | string
-    type?: StringFilter<"WatchedItem"> | string
-    director?: StringNullableFilter<"WatchedItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchedItem"> | number | null
-    userId?: StringFilter<"WatchedItem"> | string
+    AND?: WatchItemWhereInput | WatchItemWhereInput[]
+    OR?: WatchItemWhereInput[]
+    NOT?: WatchItemWhereInput | WatchItemWhereInput[]
+    createdAt?: DateTimeFilter<"WatchItem"> | Date | string
+    title?: StringFilter<"WatchItem"> | string
+    type?: StringFilter<"WatchItem"> | string
+    director?: StringFilter<"WatchItem"> | string
+    releaseYear?: IntFilter<"WatchItem"> | number
+    isWatched?: BoolFilter<"WatchItem"> | boolean
+    userId?: StringFilter<"WatchItem"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
-  export type WatchedItemOrderByWithAggregationInput = {
+  export type WatchItemOrderByWithAggregationInput = {
     id?: SortOrder
     createdAt?: SortOrder
     title?: SortOrder
     type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
+    director?: SortOrder
+    releaseYear?: SortOrder
+    isWatched?: SortOrder
     userId?: SortOrder
-    _count?: WatchedItemCountOrderByAggregateInput
-    _avg?: WatchedItemAvgOrderByAggregateInput
-    _max?: WatchedItemMaxOrderByAggregateInput
-    _min?: WatchedItemMinOrderByAggregateInput
-    _sum?: WatchedItemSumOrderByAggregateInput
+    _count?: WatchItemCountOrderByAggregateInput
+    _avg?: WatchItemAvgOrderByAggregateInput
+    _max?: WatchItemMaxOrderByAggregateInput
+    _min?: WatchItemMinOrderByAggregateInput
+    _sum?: WatchItemSumOrderByAggregateInput
   }
 
-  export type WatchedItemScalarWhereWithAggregatesInput = {
-    AND?: WatchedItemScalarWhereWithAggregatesInput | WatchedItemScalarWhereWithAggregatesInput[]
-    OR?: WatchedItemScalarWhereWithAggregatesInput[]
-    NOT?: WatchedItemScalarWhereWithAggregatesInput | WatchedItemScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"WatchedItem"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"WatchedItem"> | Date | string
-    title?: StringWithAggregatesFilter<"WatchedItem"> | string
-    type?: StringWithAggregatesFilter<"WatchedItem"> | string
-    director?: StringNullableWithAggregatesFilter<"WatchedItem"> | string | null
-    releaseYear?: IntNullableWithAggregatesFilter<"WatchedItem"> | number | null
-    userId?: StringWithAggregatesFilter<"WatchedItem"> | string
-  }
-
-  export type ToWatchItemWhereInput = {
-    AND?: ToWatchItemWhereInput | ToWatchItemWhereInput[]
-    OR?: ToWatchItemWhereInput[]
-    NOT?: ToWatchItemWhereInput | ToWatchItemWhereInput[]
-    id?: StringFilter<"ToWatchItem"> | string
-    createdAt?: DateTimeFilter<"ToWatchItem"> | Date | string
-    title?: StringFilter<"ToWatchItem"> | string
-    type?: StringFilter<"ToWatchItem"> | string
-    director?: StringNullableFilter<"ToWatchItem"> | string | null
-    releaseYear?: IntNullableFilter<"ToWatchItem"> | number | null
-    userId?: StringFilter<"ToWatchItem"> | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }
-
-  export type ToWatchItemOrderByWithRelationInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    user?: UserOrderByWithRelationInput
-  }
-
-  export type ToWatchItemWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: ToWatchItemWhereInput | ToWatchItemWhereInput[]
-    OR?: ToWatchItemWhereInput[]
-    NOT?: ToWatchItemWhereInput | ToWatchItemWhereInput[]
-    createdAt?: DateTimeFilter<"ToWatchItem"> | Date | string
-    title?: StringFilter<"ToWatchItem"> | string
-    type?: StringFilter<"ToWatchItem"> | string
-    director?: StringNullableFilter<"ToWatchItem"> | string | null
-    releaseYear?: IntNullableFilter<"ToWatchItem"> | number | null
-    userId?: StringFilter<"ToWatchItem"> | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id">
-
-  export type ToWatchItemOrderByWithAggregationInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    _count?: ToWatchItemCountOrderByAggregateInput
-    _avg?: ToWatchItemAvgOrderByAggregateInput
-    _max?: ToWatchItemMaxOrderByAggregateInput
-    _min?: ToWatchItemMinOrderByAggregateInput
-    _sum?: ToWatchItemSumOrderByAggregateInput
-  }
-
-  export type ToWatchItemScalarWhereWithAggregatesInput = {
-    AND?: ToWatchItemScalarWhereWithAggregatesInput | ToWatchItemScalarWhereWithAggregatesInput[]
-    OR?: ToWatchItemScalarWhereWithAggregatesInput[]
-    NOT?: ToWatchItemScalarWhereWithAggregatesInput | ToWatchItemScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"ToWatchItem"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"ToWatchItem"> | Date | string
-    title?: StringWithAggregatesFilter<"ToWatchItem"> | string
-    type?: StringWithAggregatesFilter<"ToWatchItem"> | string
-    director?: StringNullableWithAggregatesFilter<"ToWatchItem"> | string | null
-    releaseYear?: IntNullableWithAggregatesFilter<"ToWatchItem"> | number | null
-    userId?: StringWithAggregatesFilter<"ToWatchItem"> | string
-  }
-
-  export type WatchingItemWhereInput = {
-    AND?: WatchingItemWhereInput | WatchingItemWhereInput[]
-    OR?: WatchingItemWhereInput[]
-    NOT?: WatchingItemWhereInput | WatchingItemWhereInput[]
-    id?: StringFilter<"WatchingItem"> | string
-    createdAt?: DateTimeFilter<"WatchingItem"> | Date | string
-    title?: StringFilter<"WatchingItem"> | string
-    type?: StringFilter<"WatchingItem"> | string
-    director?: StringNullableFilter<"WatchingItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchingItem"> | number | null
-    userId?: StringFilter<"WatchingItem"> | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }
-
-  export type WatchingItemOrderByWithRelationInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    user?: UserOrderByWithRelationInput
-  }
-
-  export type WatchingItemWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    AND?: WatchingItemWhereInput | WatchingItemWhereInput[]
-    OR?: WatchingItemWhereInput[]
-    NOT?: WatchingItemWhereInput | WatchingItemWhereInput[]
-    createdAt?: DateTimeFilter<"WatchingItem"> | Date | string
-    title?: StringFilter<"WatchingItem"> | string
-    type?: StringFilter<"WatchingItem"> | string
-    director?: StringNullableFilter<"WatchingItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchingItem"> | number | null
-    userId?: StringFilter<"WatchingItem"> | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "id">
-
-  export type WatchingItemOrderByWithAggregationInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrderInput | SortOrder
-    releaseYear?: SortOrderInput | SortOrder
-    userId?: SortOrder
-    _count?: WatchingItemCountOrderByAggregateInput
-    _avg?: WatchingItemAvgOrderByAggregateInput
-    _max?: WatchingItemMaxOrderByAggregateInput
-    _min?: WatchingItemMinOrderByAggregateInput
-    _sum?: WatchingItemSumOrderByAggregateInput
-  }
-
-  export type WatchingItemScalarWhereWithAggregatesInput = {
-    AND?: WatchingItemScalarWhereWithAggregatesInput | WatchingItemScalarWhereWithAggregatesInput[]
-    OR?: WatchingItemScalarWhereWithAggregatesInput[]
-    NOT?: WatchingItemScalarWhereWithAggregatesInput | WatchingItemScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"WatchingItem"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"WatchingItem"> | Date | string
-    title?: StringWithAggregatesFilter<"WatchingItem"> | string
-    type?: StringWithAggregatesFilter<"WatchingItem"> | string
-    director?: StringNullableWithAggregatesFilter<"WatchingItem"> | string | null
-    releaseYear?: IntNullableWithAggregatesFilter<"WatchingItem"> | number | null
-    userId?: StringWithAggregatesFilter<"WatchingItem"> | string
+  export type WatchItemScalarWhereWithAggregatesInput = {
+    AND?: WatchItemScalarWhereWithAggregatesInput | WatchItemScalarWhereWithAggregatesInput[]
+    OR?: WatchItemScalarWhereWithAggregatesInput[]
+    NOT?: WatchItemScalarWhereWithAggregatesInput | WatchItemScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"WatchItem"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"WatchItem"> | Date | string
+    title?: StringWithAggregatesFilter<"WatchItem"> | string
+    type?: StringWithAggregatesFilter<"WatchItem"> | string
+    director?: StringWithAggregatesFilter<"WatchItem"> | string
+    releaseYear?: IntWithAggregatesFilter<"WatchItem"> | number
+    isWatched?: BoolWithAggregatesFilter<"WatchItem"> | boolean
+    userId?: StringWithAggregatesFilter<"WatchItem"> | string
   }
 
   export type UserCreateInput = {
@@ -6049,9 +3441,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    watchedItems?: WatchedItemCreateNestedManyWithoutUserInput
-    toWatchItems?: ToWatchItemCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemCreateNestedManyWithoutUserInput
+    watchItems?: WatchItemCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -6061,9 +3451,7 @@ export namespace Prisma {
     email: string
     name?: string | null
     password: string
-    watchedItems?: WatchedItemUncheckedCreateNestedManyWithoutUserInput
-    toWatchItems?: ToWatchItemUncheckedCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemUncheckedCreateNestedManyWithoutUserInput
+    watchItems?: WatchItemUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -6073,9 +3461,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUpdateManyWithoutUserNestedInput
-    toWatchItems?: ToWatchItemUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUpdateManyWithoutUserNestedInput
+    watchItems?: WatchItemUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -6085,9 +3471,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUncheckedUpdateManyWithoutUserNestedInput
-    toWatchItems?: ToWatchItemUncheckedUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUncheckedUpdateManyWithoutUserNestedInput
+    watchItems?: WatchItemUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -6117,210 +3501,79 @@ export namespace Prisma {
     password?: StringFieldUpdateOperationsInput | string
   }
 
-  export type WatchedItemCreateInput = {
+  export type WatchItemCreateInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
-    user: UserCreateNestedOneWithoutWatchedItemsInput
+    director: string
+    releaseYear: number
+    isWatched: boolean
+    user: UserCreateNestedOneWithoutWatchItemsInput
   }
 
-  export type WatchedItemUncheckedCreateInput = {
+  export type WatchItemUncheckedCreateInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
     userId: string
   }
 
-  export type WatchedItemUpdateInput = {
+  export type WatchItemUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    user?: UserUpdateOneRequiredWithoutWatchedItemsNestedInput
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
+    user?: UserUpdateOneRequiredWithoutWatchItemsNestedInput
   }
 
-  export type WatchedItemUncheckedUpdateInput = {
+  export type WatchItemUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type WatchedItemCreateManyInput = {
+  export type WatchItemCreateManyInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
     userId: string
   }
 
-  export type WatchedItemUpdateManyMutationInput = {
+  export type WatchItemUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type WatchedItemUncheckedUpdateManyInput = {
+  export type WatchItemUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ToWatchItemCreateInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    user: UserCreateNestedOneWithoutToWatchItemsInput
-  }
-
-  export type ToWatchItemUncheckedCreateInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    userId: string
-  }
-
-  export type ToWatchItemUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    user?: UserUpdateOneRequiredWithoutToWatchItemsNestedInput
-  }
-
-  export type ToWatchItemUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type ToWatchItemCreateManyInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    userId: string
-  }
-
-  export type ToWatchItemUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type ToWatchItemUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type WatchingItemCreateInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    user: UserCreateNestedOneWithoutWatchingItemsInput
-  }
-
-  export type WatchingItemUncheckedCreateInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    userId: string
-  }
-
-  export type WatchingItemUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    user?: UserUpdateOneRequiredWithoutWatchingItemsNestedInput
-  }
-
-  export type WatchingItemUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-    userId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type WatchingItemCreateManyInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-    userId: string
-  }
-
-  export type WatchingItemUpdateManyMutationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type WatchingItemUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
     userId?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6365,22 +3618,10 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type WatchedItemListRelationFilter = {
-    every?: WatchedItemWhereInput
-    some?: WatchedItemWhereInput
-    none?: WatchedItemWhereInput
-  }
-
-  export type ToWatchItemListRelationFilter = {
-    every?: ToWatchItemWhereInput
-    some?: ToWatchItemWhereInput
-    none?: ToWatchItemWhereInput
-  }
-
-  export type WatchingItemListRelationFilter = {
-    every?: WatchingItemWhereInput
-    some?: WatchingItemWhereInput
-    none?: WatchingItemWhereInput
+  export type WatchItemListRelationFilter = {
+    every?: WatchItemWhereInput
+    some?: WatchItemWhereInput
+    none?: WatchItemWhereInput
   }
 
   export type SortOrderInput = {
@@ -6388,15 +3629,7 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type WatchedItemOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type ToWatchItemOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type WatchingItemOrderByRelationAggregateInput = {
+  export type WatchItemOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -6477,15 +3710,20 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type UserScalarRelationFilter = {
@@ -6493,176 +3731,83 @@ export namespace Prisma {
     isNot?: UserWhereInput
   }
 
-  export type WatchedItemCountOrderByAggregateInput = {
+  export type WatchItemCountOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     title?: SortOrder
     type?: SortOrder
     director?: SortOrder
     releaseYear?: SortOrder
+    isWatched?: SortOrder
     userId?: SortOrder
   }
 
-  export type WatchedItemAvgOrderByAggregateInput = {
+  export type WatchItemAvgOrderByAggregateInput = {
     releaseYear?: SortOrder
   }
 
-  export type WatchedItemMaxOrderByAggregateInput = {
+  export type WatchItemMaxOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     title?: SortOrder
     type?: SortOrder
     director?: SortOrder
     releaseYear?: SortOrder
+    isWatched?: SortOrder
     userId?: SortOrder
   }
 
-  export type WatchedItemMinOrderByAggregateInput = {
+  export type WatchItemMinOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     title?: SortOrder
     type?: SortOrder
     director?: SortOrder
     releaseYear?: SortOrder
+    isWatched?: SortOrder
     userId?: SortOrder
   }
 
-  export type WatchedItemSumOrderByAggregateInput = {
+  export type WatchItemSumOrderByAggregateInput = {
     releaseYear?: SortOrder
   }
 
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type ToWatchItemCountOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type ToWatchItemAvgOrderByAggregateInput = {
-    releaseYear?: SortOrder
+  export type WatchItemCreateNestedManyWithoutUserInput = {
+    create?: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput> | WatchItemCreateWithoutUserInput[] | WatchItemUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WatchItemCreateOrConnectWithoutUserInput | WatchItemCreateOrConnectWithoutUserInput[]
+    createMany?: WatchItemCreateManyUserInputEnvelope
+    connect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
   }
 
-  export type ToWatchItemMaxOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type ToWatchItemMinOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type ToWatchItemSumOrderByAggregateInput = {
-    releaseYear?: SortOrder
-  }
-
-  export type WatchingItemCountOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type WatchingItemAvgOrderByAggregateInput = {
-    releaseYear?: SortOrder
-  }
-
-  export type WatchingItemMaxOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type WatchingItemMinOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    title?: SortOrder
-    type?: SortOrder
-    director?: SortOrder
-    releaseYear?: SortOrder
-    userId?: SortOrder
-  }
-
-  export type WatchingItemSumOrderByAggregateInput = {
-    releaseYear?: SortOrder
-  }
-
-  export type WatchedItemCreateNestedManyWithoutUserInput = {
-    create?: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput> | WatchedItemCreateWithoutUserInput[] | WatchedItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchedItemCreateOrConnectWithoutUserInput | WatchedItemCreateOrConnectWithoutUserInput[]
-    createMany?: WatchedItemCreateManyUserInputEnvelope
-    connect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-  }
-
-  export type ToWatchItemCreateNestedManyWithoutUserInput = {
-    create?: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput> | ToWatchItemCreateWithoutUserInput[] | ToWatchItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ToWatchItemCreateOrConnectWithoutUserInput | ToWatchItemCreateOrConnectWithoutUserInput[]
-    createMany?: ToWatchItemCreateManyUserInputEnvelope
-    connect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-  }
-
-  export type WatchingItemCreateNestedManyWithoutUserInput = {
-    create?: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput> | WatchingItemCreateWithoutUserInput[] | WatchingItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchingItemCreateOrConnectWithoutUserInput | WatchingItemCreateOrConnectWithoutUserInput[]
-    createMany?: WatchingItemCreateManyUserInputEnvelope
-    connect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-  }
-
-  export type WatchedItemUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput> | WatchedItemCreateWithoutUserInput[] | WatchedItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchedItemCreateOrConnectWithoutUserInput | WatchedItemCreateOrConnectWithoutUserInput[]
-    createMany?: WatchedItemCreateManyUserInputEnvelope
-    connect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-  }
-
-  export type ToWatchItemUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput> | ToWatchItemCreateWithoutUserInput[] | ToWatchItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ToWatchItemCreateOrConnectWithoutUserInput | ToWatchItemCreateOrConnectWithoutUserInput[]
-    createMany?: ToWatchItemCreateManyUserInputEnvelope
-    connect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-  }
-
-  export type WatchingItemUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput> | WatchingItemCreateWithoutUserInput[] | WatchingItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchingItemCreateOrConnectWithoutUserInput | WatchingItemCreateOrConnectWithoutUserInput[]
-    createMany?: WatchingItemCreateManyUserInputEnvelope
-    connect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
+  export type WatchItemUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput> | WatchItemCreateWithoutUserInput[] | WatchItemUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WatchItemCreateOrConnectWithoutUserInput | WatchItemCreateOrConnectWithoutUserInput[]
+    createMany?: WatchItemCreateManyUserInputEnvelope
+    connect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -6677,138 +3822,58 @@ export namespace Prisma {
     set?: string | null
   }
 
-  export type WatchedItemUpdateManyWithoutUserNestedInput = {
-    create?: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput> | WatchedItemCreateWithoutUserInput[] | WatchedItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchedItemCreateOrConnectWithoutUserInput | WatchedItemCreateOrConnectWithoutUserInput[]
-    upsert?: WatchedItemUpsertWithWhereUniqueWithoutUserInput | WatchedItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: WatchedItemCreateManyUserInputEnvelope
-    set?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    disconnect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    delete?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    connect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    update?: WatchedItemUpdateWithWhereUniqueWithoutUserInput | WatchedItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: WatchedItemUpdateManyWithWhereWithoutUserInput | WatchedItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: WatchedItemScalarWhereInput | WatchedItemScalarWhereInput[]
+  export type WatchItemUpdateManyWithoutUserNestedInput = {
+    create?: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput> | WatchItemCreateWithoutUserInput[] | WatchItemUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WatchItemCreateOrConnectWithoutUserInput | WatchItemCreateOrConnectWithoutUserInput[]
+    upsert?: WatchItemUpsertWithWhereUniqueWithoutUserInput | WatchItemUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: WatchItemCreateManyUserInputEnvelope
+    set?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    disconnect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    delete?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    connect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    update?: WatchItemUpdateWithWhereUniqueWithoutUserInput | WatchItemUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: WatchItemUpdateManyWithWhereWithoutUserInput | WatchItemUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: WatchItemScalarWhereInput | WatchItemScalarWhereInput[]
   }
 
-  export type ToWatchItemUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput> | ToWatchItemCreateWithoutUserInput[] | ToWatchItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ToWatchItemCreateOrConnectWithoutUserInput | ToWatchItemCreateOrConnectWithoutUserInput[]
-    upsert?: ToWatchItemUpsertWithWhereUniqueWithoutUserInput | ToWatchItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ToWatchItemCreateManyUserInputEnvelope
-    set?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    disconnect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    delete?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    connect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    update?: ToWatchItemUpdateWithWhereUniqueWithoutUserInput | ToWatchItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ToWatchItemUpdateManyWithWhereWithoutUserInput | ToWatchItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ToWatchItemScalarWhereInput | ToWatchItemScalarWhereInput[]
+  export type WatchItemUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput> | WatchItemCreateWithoutUserInput[] | WatchItemUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: WatchItemCreateOrConnectWithoutUserInput | WatchItemCreateOrConnectWithoutUserInput[]
+    upsert?: WatchItemUpsertWithWhereUniqueWithoutUserInput | WatchItemUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: WatchItemCreateManyUserInputEnvelope
+    set?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    disconnect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    delete?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    connect?: WatchItemWhereUniqueInput | WatchItemWhereUniqueInput[]
+    update?: WatchItemUpdateWithWhereUniqueWithoutUserInput | WatchItemUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: WatchItemUpdateManyWithWhereWithoutUserInput | WatchItemUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: WatchItemScalarWhereInput | WatchItemScalarWhereInput[]
   }
 
-  export type WatchingItemUpdateManyWithoutUserNestedInput = {
-    create?: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput> | WatchingItemCreateWithoutUserInput[] | WatchingItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchingItemCreateOrConnectWithoutUserInput | WatchingItemCreateOrConnectWithoutUserInput[]
-    upsert?: WatchingItemUpsertWithWhereUniqueWithoutUserInput | WatchingItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: WatchingItemCreateManyUserInputEnvelope
-    set?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    disconnect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    delete?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    connect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    update?: WatchingItemUpdateWithWhereUniqueWithoutUserInput | WatchingItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: WatchingItemUpdateManyWithWhereWithoutUserInput | WatchingItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: WatchingItemScalarWhereInput | WatchingItemScalarWhereInput[]
-  }
-
-  export type WatchedItemUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput> | WatchedItemCreateWithoutUserInput[] | WatchedItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchedItemCreateOrConnectWithoutUserInput | WatchedItemCreateOrConnectWithoutUserInput[]
-    upsert?: WatchedItemUpsertWithWhereUniqueWithoutUserInput | WatchedItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: WatchedItemCreateManyUserInputEnvelope
-    set?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    disconnect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    delete?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    connect?: WatchedItemWhereUniqueInput | WatchedItemWhereUniqueInput[]
-    update?: WatchedItemUpdateWithWhereUniqueWithoutUserInput | WatchedItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: WatchedItemUpdateManyWithWhereWithoutUserInput | WatchedItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: WatchedItemScalarWhereInput | WatchedItemScalarWhereInput[]
-  }
-
-  export type ToWatchItemUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput> | ToWatchItemCreateWithoutUserInput[] | ToWatchItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ToWatchItemCreateOrConnectWithoutUserInput | ToWatchItemCreateOrConnectWithoutUserInput[]
-    upsert?: ToWatchItemUpsertWithWhereUniqueWithoutUserInput | ToWatchItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ToWatchItemCreateManyUserInputEnvelope
-    set?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    disconnect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    delete?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    connect?: ToWatchItemWhereUniqueInput | ToWatchItemWhereUniqueInput[]
-    update?: ToWatchItemUpdateWithWhereUniqueWithoutUserInput | ToWatchItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ToWatchItemUpdateManyWithWhereWithoutUserInput | ToWatchItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ToWatchItemScalarWhereInput | ToWatchItemScalarWhereInput[]
-  }
-
-  export type WatchingItemUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput> | WatchingItemCreateWithoutUserInput[] | WatchingItemUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: WatchingItemCreateOrConnectWithoutUserInput | WatchingItemCreateOrConnectWithoutUserInput[]
-    upsert?: WatchingItemUpsertWithWhereUniqueWithoutUserInput | WatchingItemUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: WatchingItemCreateManyUserInputEnvelope
-    set?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    disconnect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    delete?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    connect?: WatchingItemWhereUniqueInput | WatchingItemWhereUniqueInput[]
-    update?: WatchingItemUpdateWithWhereUniqueWithoutUserInput | WatchingItemUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: WatchingItemUpdateManyWithWhereWithoutUserInput | WatchingItemUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: WatchingItemScalarWhereInput | WatchingItemScalarWhereInput[]
-  }
-
-  export type UserCreateNestedOneWithoutWatchedItemsInput = {
-    create?: XOR<UserCreateWithoutWatchedItemsInput, UserUncheckedCreateWithoutWatchedItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutWatchedItemsInput
+  export type UserCreateNestedOneWithoutWatchItemsInput = {
+    create?: XOR<UserCreateWithoutWatchItemsInput, UserUncheckedCreateWithoutWatchItemsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutWatchItemsInput
     connect?: UserWhereUniqueInput
   }
 
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
   }
 
-  export type UserUpdateOneRequiredWithoutWatchedItemsNestedInput = {
-    create?: XOR<UserCreateWithoutWatchedItemsInput, UserUncheckedCreateWithoutWatchedItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutWatchedItemsInput
-    upsert?: UserUpsertWithoutWatchedItemsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutWatchedItemsInput, UserUpdateWithoutWatchedItemsInput>, UserUncheckedUpdateWithoutWatchedItemsInput>
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
-  export type UserCreateNestedOneWithoutToWatchItemsInput = {
-    create?: XOR<UserCreateWithoutToWatchItemsInput, UserUncheckedCreateWithoutToWatchItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutToWatchItemsInput
+  export type UserUpdateOneRequiredWithoutWatchItemsNestedInput = {
+    create?: XOR<UserCreateWithoutWatchItemsInput, UserUncheckedCreateWithoutWatchItemsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutWatchItemsInput
+    upsert?: UserUpsertWithoutWatchItemsInput
     connect?: UserWhereUniqueInput
-  }
-
-  export type UserUpdateOneRequiredWithoutToWatchItemsNestedInput = {
-    create?: XOR<UserCreateWithoutToWatchItemsInput, UserUncheckedCreateWithoutToWatchItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutToWatchItemsInput
-    upsert?: UserUpsertWithoutToWatchItemsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutToWatchItemsInput, UserUpdateWithoutToWatchItemsInput>, UserUncheckedUpdateWithoutToWatchItemsInput>
-  }
-
-  export type UserCreateNestedOneWithoutWatchingItemsInput = {
-    create?: XOR<UserCreateWithoutWatchingItemsInput, UserUncheckedCreateWithoutWatchingItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutWatchingItemsInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserUpdateOneRequiredWithoutWatchingItemsNestedInput = {
-    create?: XOR<UserCreateWithoutWatchingItemsInput, UserUncheckedCreateWithoutWatchingItemsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutWatchingItemsInput
-    upsert?: UserUpsertWithoutWatchingItemsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutWatchingItemsInput, UserUpdateWithoutWatchingItemsInput>, UserUncheckedUpdateWithoutWatchingItemsInput>
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutWatchItemsInput, UserUpdateWithoutWatchItemsInput>, UserUncheckedUpdateWithoutWatchItemsInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -6920,490 +3985,196 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
-  export type WatchedItemCreateWithoutUserInput = {
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type WatchItemCreateWithoutUserInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
   }
 
-  export type WatchedItemUncheckedCreateWithoutUserInput = {
+  export type WatchItemUncheckedCreateWithoutUserInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
   }
 
-  export type WatchedItemCreateOrConnectWithoutUserInput = {
-    where: WatchedItemWhereUniqueInput
-    create: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput>
+  export type WatchItemCreateOrConnectWithoutUserInput = {
+    where: WatchItemWhereUniqueInput
+    create: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput>
   }
 
-  export type WatchedItemCreateManyUserInputEnvelope = {
-    data: WatchedItemCreateManyUserInput | WatchedItemCreateManyUserInput[]
+  export type WatchItemCreateManyUserInputEnvelope = {
+    data: WatchItemCreateManyUserInput | WatchItemCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
-  export type ToWatchItemCreateWithoutUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
+  export type WatchItemUpsertWithWhereUniqueWithoutUserInput = {
+    where: WatchItemWhereUniqueInput
+    update: XOR<WatchItemUpdateWithoutUserInput, WatchItemUncheckedUpdateWithoutUserInput>
+    create: XOR<WatchItemCreateWithoutUserInput, WatchItemUncheckedCreateWithoutUserInput>
   }
 
-  export type ToWatchItemUncheckedCreateWithoutUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
+  export type WatchItemUpdateWithWhereUniqueWithoutUserInput = {
+    where: WatchItemWhereUniqueInput
+    data: XOR<WatchItemUpdateWithoutUserInput, WatchItemUncheckedUpdateWithoutUserInput>
   }
 
-  export type ToWatchItemCreateOrConnectWithoutUserInput = {
-    where: ToWatchItemWhereUniqueInput
-    create: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput>
+  export type WatchItemUpdateManyWithWhereWithoutUserInput = {
+    where: WatchItemScalarWhereInput
+    data: XOR<WatchItemUpdateManyMutationInput, WatchItemUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type ToWatchItemCreateManyUserInputEnvelope = {
-    data: ToWatchItemCreateManyUserInput | ToWatchItemCreateManyUserInput[]
-    skipDuplicates?: boolean
+  export type WatchItemScalarWhereInput = {
+    AND?: WatchItemScalarWhereInput | WatchItemScalarWhereInput[]
+    OR?: WatchItemScalarWhereInput[]
+    NOT?: WatchItemScalarWhereInput | WatchItemScalarWhereInput[]
+    id?: StringFilter<"WatchItem"> | string
+    createdAt?: DateTimeFilter<"WatchItem"> | Date | string
+    title?: StringFilter<"WatchItem"> | string
+    type?: StringFilter<"WatchItem"> | string
+    director?: StringFilter<"WatchItem"> | string
+    releaseYear?: IntFilter<"WatchItem"> | number
+    isWatched?: BoolFilter<"WatchItem"> | boolean
+    userId?: StringFilter<"WatchItem"> | string
   }
 
-  export type WatchingItemCreateWithoutUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-  }
-
-  export type WatchingItemUncheckedCreateWithoutUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-  }
-
-  export type WatchingItemCreateOrConnectWithoutUserInput = {
-    where: WatchingItemWhereUniqueInput
-    create: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput>
-  }
-
-  export type WatchingItemCreateManyUserInputEnvelope = {
-    data: WatchingItemCreateManyUserInput | WatchingItemCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type WatchedItemUpsertWithWhereUniqueWithoutUserInput = {
-    where: WatchedItemWhereUniqueInput
-    update: XOR<WatchedItemUpdateWithoutUserInput, WatchedItemUncheckedUpdateWithoutUserInput>
-    create: XOR<WatchedItemCreateWithoutUserInput, WatchedItemUncheckedCreateWithoutUserInput>
-  }
-
-  export type WatchedItemUpdateWithWhereUniqueWithoutUserInput = {
-    where: WatchedItemWhereUniqueInput
-    data: XOR<WatchedItemUpdateWithoutUserInput, WatchedItemUncheckedUpdateWithoutUserInput>
-  }
-
-  export type WatchedItemUpdateManyWithWhereWithoutUserInput = {
-    where: WatchedItemScalarWhereInput
-    data: XOR<WatchedItemUpdateManyMutationInput, WatchedItemUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type WatchedItemScalarWhereInput = {
-    AND?: WatchedItemScalarWhereInput | WatchedItemScalarWhereInput[]
-    OR?: WatchedItemScalarWhereInput[]
-    NOT?: WatchedItemScalarWhereInput | WatchedItemScalarWhereInput[]
-    id?: StringFilter<"WatchedItem"> | string
-    createdAt?: DateTimeFilter<"WatchedItem"> | Date | string
-    title?: StringFilter<"WatchedItem"> | string
-    type?: StringFilter<"WatchedItem"> | string
-    director?: StringNullableFilter<"WatchedItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchedItem"> | number | null
-    userId?: StringFilter<"WatchedItem"> | string
-  }
-
-  export type ToWatchItemUpsertWithWhereUniqueWithoutUserInput = {
-    where: ToWatchItemWhereUniqueInput
-    update: XOR<ToWatchItemUpdateWithoutUserInput, ToWatchItemUncheckedUpdateWithoutUserInput>
-    create: XOR<ToWatchItemCreateWithoutUserInput, ToWatchItemUncheckedCreateWithoutUserInput>
-  }
-
-  export type ToWatchItemUpdateWithWhereUniqueWithoutUserInput = {
-    where: ToWatchItemWhereUniqueInput
-    data: XOR<ToWatchItemUpdateWithoutUserInput, ToWatchItemUncheckedUpdateWithoutUserInput>
-  }
-
-  export type ToWatchItemUpdateManyWithWhereWithoutUserInput = {
-    where: ToWatchItemScalarWhereInput
-    data: XOR<ToWatchItemUpdateManyMutationInput, ToWatchItemUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type ToWatchItemScalarWhereInput = {
-    AND?: ToWatchItemScalarWhereInput | ToWatchItemScalarWhereInput[]
-    OR?: ToWatchItemScalarWhereInput[]
-    NOT?: ToWatchItemScalarWhereInput | ToWatchItemScalarWhereInput[]
-    id?: StringFilter<"ToWatchItem"> | string
-    createdAt?: DateTimeFilter<"ToWatchItem"> | Date | string
-    title?: StringFilter<"ToWatchItem"> | string
-    type?: StringFilter<"ToWatchItem"> | string
-    director?: StringNullableFilter<"ToWatchItem"> | string | null
-    releaseYear?: IntNullableFilter<"ToWatchItem"> | number | null
-    userId?: StringFilter<"ToWatchItem"> | string
-  }
-
-  export type WatchingItemUpsertWithWhereUniqueWithoutUserInput = {
-    where: WatchingItemWhereUniqueInput
-    update: XOR<WatchingItemUpdateWithoutUserInput, WatchingItemUncheckedUpdateWithoutUserInput>
-    create: XOR<WatchingItemCreateWithoutUserInput, WatchingItemUncheckedCreateWithoutUserInput>
-  }
-
-  export type WatchingItemUpdateWithWhereUniqueWithoutUserInput = {
-    where: WatchingItemWhereUniqueInput
-    data: XOR<WatchingItemUpdateWithoutUserInput, WatchingItemUncheckedUpdateWithoutUserInput>
-  }
-
-  export type WatchingItemUpdateManyWithWhereWithoutUserInput = {
-    where: WatchingItemScalarWhereInput
-    data: XOR<WatchingItemUpdateManyMutationInput, WatchingItemUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type WatchingItemScalarWhereInput = {
-    AND?: WatchingItemScalarWhereInput | WatchingItemScalarWhereInput[]
-    OR?: WatchingItemScalarWhereInput[]
-    NOT?: WatchingItemScalarWhereInput | WatchingItemScalarWhereInput[]
-    id?: StringFilter<"WatchingItem"> | string
-    createdAt?: DateTimeFilter<"WatchingItem"> | Date | string
-    title?: StringFilter<"WatchingItem"> | string
-    type?: StringFilter<"WatchingItem"> | string
-    director?: StringNullableFilter<"WatchingItem"> | string | null
-    releaseYear?: IntNullableFilter<"WatchingItem"> | number | null
-    userId?: StringFilter<"WatchingItem"> | string
-  }
-
-  export type UserCreateWithoutWatchedItemsInput = {
+  export type UserCreateWithoutWatchItemsInput = {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
     email: string
     name?: string | null
     password: string
-    toWatchItems?: ToWatchItemCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemCreateNestedManyWithoutUserInput
   }
 
-  export type UserUncheckedCreateWithoutWatchedItemsInput = {
+  export type UserUncheckedCreateWithoutWatchItemsInput = {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
     email: string
     name?: string | null
     password: string
-    toWatchItems?: ToWatchItemUncheckedCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type UserCreateOrConnectWithoutWatchedItemsInput = {
+  export type UserCreateOrConnectWithoutWatchItemsInput = {
     where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutWatchedItemsInput, UserUncheckedCreateWithoutWatchedItemsInput>
+    create: XOR<UserCreateWithoutWatchItemsInput, UserUncheckedCreateWithoutWatchItemsInput>
   }
 
-  export type UserUpsertWithoutWatchedItemsInput = {
-    update: XOR<UserUpdateWithoutWatchedItemsInput, UserUncheckedUpdateWithoutWatchedItemsInput>
-    create: XOR<UserCreateWithoutWatchedItemsInput, UserUncheckedCreateWithoutWatchedItemsInput>
+  export type UserUpsertWithoutWatchItemsInput = {
+    update: XOR<UserUpdateWithoutWatchItemsInput, UserUncheckedUpdateWithoutWatchItemsInput>
+    create: XOR<UserCreateWithoutWatchItemsInput, UserUncheckedCreateWithoutWatchItemsInput>
     where?: UserWhereInput
   }
 
-  export type UserUpdateToOneWithWhereWithoutWatchedItemsInput = {
+  export type UserUpdateToOneWithWhereWithoutWatchItemsInput = {
     where?: UserWhereInput
-    data: XOR<UserUpdateWithoutWatchedItemsInput, UserUncheckedUpdateWithoutWatchedItemsInput>
+    data: XOR<UserUpdateWithoutWatchItemsInput, UserUncheckedUpdateWithoutWatchItemsInput>
   }
 
-  export type UserUpdateWithoutWatchedItemsInput = {
+  export type UserUpdateWithoutWatchItemsInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    toWatchItems?: ToWatchItemUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUpdateManyWithoutUserNestedInput
   }
 
-  export type UserUncheckedUpdateWithoutWatchedItemsInput = {
+  export type UserUncheckedUpdateWithoutWatchItemsInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     password?: StringFieldUpdateOperationsInput | string
-    toWatchItems?: ToWatchItemUncheckedUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type UserCreateWithoutToWatchItemsInput = {
-    id?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    email: string
-    name?: string | null
-    password: string
-    watchedItems?: WatchedItemCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutToWatchItemsInput = {
-    id?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    email: string
-    name?: string | null
-    password: string
-    watchedItems?: WatchedItemUncheckedCreateNestedManyWithoutUserInput
-    watchingItems?: WatchingItemUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutToWatchItemsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutToWatchItemsInput, UserUncheckedCreateWithoutToWatchItemsInput>
-  }
-
-  export type UserUpsertWithoutToWatchItemsInput = {
-    update: XOR<UserUpdateWithoutToWatchItemsInput, UserUncheckedUpdateWithoutToWatchItemsInput>
-    create: XOR<UserCreateWithoutToWatchItemsInput, UserUncheckedCreateWithoutToWatchItemsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutToWatchItemsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutToWatchItemsInput, UserUncheckedUpdateWithoutToWatchItemsInput>
-  }
-
-  export type UserUpdateWithoutToWatchItemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutToWatchItemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUncheckedUpdateManyWithoutUserNestedInput
-    watchingItems?: WatchingItemUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserCreateWithoutWatchingItemsInput = {
-    id?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    email: string
-    name?: string | null
-    password: string
-    watchedItems?: WatchedItemCreateNestedManyWithoutUserInput
-    toWatchItems?: ToWatchItemCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutWatchingItemsInput = {
-    id?: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    email: string
-    name?: string | null
-    password: string
-    watchedItems?: WatchedItemUncheckedCreateNestedManyWithoutUserInput
-    toWatchItems?: ToWatchItemUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutWatchingItemsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutWatchingItemsInput, UserUncheckedCreateWithoutWatchingItemsInput>
-  }
-
-  export type UserUpsertWithoutWatchingItemsInput = {
-    update: XOR<UserUpdateWithoutWatchingItemsInput, UserUncheckedUpdateWithoutWatchingItemsInput>
-    create: XOR<UserCreateWithoutWatchingItemsInput, UserUncheckedCreateWithoutWatchingItemsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutWatchingItemsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutWatchingItemsInput, UserUncheckedUpdateWithoutWatchingItemsInput>
-  }
-
-  export type UserUpdateWithoutWatchingItemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUpdateManyWithoutUserNestedInput
-    toWatchItems?: ToWatchItemUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutWatchingItemsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    email?: StringFieldUpdateOperationsInput | string
-    name?: NullableStringFieldUpdateOperationsInput | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    watchedItems?: WatchedItemUncheckedUpdateManyWithoutUserNestedInput
-    toWatchItems?: ToWatchItemUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type WatchedItemCreateManyUserInput = {
+  export type WatchItemCreateManyUserInput = {
     id?: string
     createdAt?: Date | string
     title: string
     type: string
-    director?: string | null
-    releaseYear?: number | null
+    director: string
+    releaseYear: number
+    isWatched: boolean
   }
 
-  export type ToWatchItemCreateManyUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-  }
-
-  export type WatchingItemCreateManyUserInput = {
-    id?: string
-    createdAt?: Date | string
-    title: string
-    type: string
-    director?: string | null
-    releaseYear?: number | null
-  }
-
-  export type WatchedItemUpdateWithoutUserInput = {
+  export type WatchItemUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type WatchedItemUncheckedUpdateWithoutUserInput = {
+  export type WatchItemUncheckedUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type WatchedItemUncheckedUpdateManyWithoutUserInput = {
+  export type WatchItemUncheckedUpdateManyWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type ToWatchItemUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type ToWatchItemUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type ToWatchItemUncheckedUpdateManyWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type WatchingItemUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type WatchingItemUncheckedUpdateWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
-  }
-
-  export type WatchingItemUncheckedUpdateManyWithoutUserInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    title?: StringFieldUpdateOperationsInput | string
-    type?: StringFieldUpdateOperationsInput | string
-    director?: NullableStringFieldUpdateOperationsInput | string | null
-    releaseYear?: NullableIntFieldUpdateOperationsInput | number | null
+    director?: StringFieldUpdateOperationsInput | string
+    releaseYear?: IntFieldUpdateOperationsInput | number
+    isWatched?: BoolFieldUpdateOperationsInput | boolean
   }
 
 

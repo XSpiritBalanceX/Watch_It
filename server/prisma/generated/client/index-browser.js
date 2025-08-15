@@ -129,33 +129,14 @@ exports.Prisma.UserScalarFieldEnum = {
   password: 'password'
 };
 
-exports.Prisma.WatchedItemScalarFieldEnum = {
+exports.Prisma.WatchItemScalarFieldEnum = {
   id: 'id',
   createdAt: 'createdAt',
   title: 'title',
   type: 'type',
   director: 'director',
   releaseYear: 'releaseYear',
-  userId: 'userId'
-};
-
-exports.Prisma.ToWatchItemScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  title: 'title',
-  type: 'type',
-  director: 'director',
-  releaseYear: 'releaseYear',
-  userId: 'userId'
-};
-
-exports.Prisma.WatchingItemScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  title: 'title',
-  type: 'type',
-  director: 'director',
-  releaseYear: 'releaseYear',
+  isWatched: 'isWatched',
   userId: 'userId'
 };
 
@@ -177,9 +158,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  WatchedItem: 'WatchedItem',
-  ToWatchItem: 'ToWatchItem',
-  WatchingItem: 'WatchingItem'
+  WatchItem: 'WatchItem'
 };
 
 /**
