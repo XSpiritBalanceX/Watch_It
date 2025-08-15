@@ -10,6 +10,10 @@ export class WatchItemService {
     return this.prisma.watchItem.findMany({ where: { userId } });
   }
 
+  async getWatchItem(itemId: string) {
+    return this.prisma.watchItem.findUnique({ where: { id: itemId }, include: { reviews: true } });
+  }
+
   async create(dto: WatchItemDto, userId: string) {
     return this.prisma.watchItem.create({ data: { ...dto, user: { connect: { id: userId } } } });
   }

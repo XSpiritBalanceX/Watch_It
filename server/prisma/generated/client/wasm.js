@@ -140,6 +140,16 @@ exports.Prisma.WatchItemScalarFieldEnum = {
   userId: 'userId'
 };
 
+exports.Prisma.ReviewScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  content: 'content',
+  rating: 'rating',
+  userId: 'userId',
+  watchItemId: 'watchItemId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -158,7 +168,8 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
-  WatchItem: 'WatchItem'
+  WatchItem: 'WatchItem',
+  Review: 'Review'
 };
 
 /**

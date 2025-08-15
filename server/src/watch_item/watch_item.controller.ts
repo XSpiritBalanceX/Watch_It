@@ -14,6 +14,12 @@ export class WatchItemController {
     return this.watchItemService.getAll(userId);
   }
 
+  @Get(":id")
+  @Auth()
+  async getWatchItem(@Param("id") itemId: string) {
+    return this.watchItemService.getWatchItem(itemId);
+  }
+
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Post()

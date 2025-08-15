@@ -18,12 +18,13 @@ model User {
   password String
 
   watchItems WatchItem[]
+  reviews    Review[]
 
   @@map("user")
 }
 
 model WatchItem {
-  id        String   @id @default(cuid())
+  id        String   @id @map("id")
   createdAt DateTime @default(now()) @map("created_at")
 
   title       String
@@ -35,5 +36,24 @@ model WatchItem {
   user   User   @relation(fields: [userId], references: [id])
   userId String @map("user_id")
 
+  reviews Review[]
+
   @@map("watch_item")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  content String
+  rating  Int
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @map("user_id")
+
+  watchItem   WatchItem @relation(fields: [watchItemId], references: [id])
+  watchItemId String    @map("watch_item_id")
+
+  @@map("review")
 }

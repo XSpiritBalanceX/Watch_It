@@ -12,7 +12,7 @@ export class UserService {
   getById(id: string) {
     return this.prisma.user.findUnique({
       where: { id },
-      include: { watchItems: true },
+      include: { watchItems: true, reviews: true },
     });
   }
 
@@ -37,6 +37,8 @@ export class UserService {
       where: { userId: id, isWatched: false },
     });
 
+    const totalReviews = profile.reviews.length;
+
     //eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password, ...rest } = profile;
 
@@ -46,6 +48,7 @@ export class UserService {
         { label: "Total", value: totalWatchItems },
         { label: "Watched items", value: watchedItems },
         { label: "To watch items", value: toWatchItems },
+        { label: "Your reviews", value: totalReviews },
       ],
     };
   }

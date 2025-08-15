@@ -3,6 +3,10 @@ import { IsBoolean, IsNumber, IsOptional, IsString } from "class-validator";
 export class WatchItemDto {
   @IsString()
   @IsOptional()
+  id: string;
+
+  @IsString()
+  @IsOptional()
   title: string;
 
   @IsString()
