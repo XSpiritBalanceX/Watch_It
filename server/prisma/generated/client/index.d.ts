@@ -3537,7 +3537,7 @@ export namespace Prisma {
     id: string
     createdAt: Date
     updatedAt: Date
-    content: string
+    content: string | null
     rating: number
     userId: string
     watchItemId: string
@@ -3632,7 +3632,7 @@ export namespace Prisma {
       id: string
       createdAt: Date
       updatedAt: Date
-      content: string
+      content: string | null
       rating: number
       userId: string
       watchItemId: string
@@ -4763,7 +4763,7 @@ export namespace Prisma {
     id?: StringFilter<"Review"> | string
     createdAt?: DateTimeFilter<"Review"> | Date | string
     updatedAt?: DateTimeFilter<"Review"> | Date | string
-    content?: StringFilter<"Review"> | string
+    content?: StringNullableFilter<"Review"> | string | null
     rating?: IntFilter<"Review"> | number
     userId?: StringFilter<"Review"> | string
     watchItemId?: StringFilter<"Review"> | string
@@ -4775,7 +4775,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    content?: SortOrder
+    content?: SortOrderInput | SortOrder
     rating?: SortOrder
     userId?: SortOrder
     watchItemId?: SortOrder
@@ -4790,7 +4790,7 @@ export namespace Prisma {
     NOT?: ReviewWhereInput | ReviewWhereInput[]
     createdAt?: DateTimeFilter<"Review"> | Date | string
     updatedAt?: DateTimeFilter<"Review"> | Date | string
-    content?: StringFilter<"Review"> | string
+    content?: StringNullableFilter<"Review"> | string | null
     rating?: IntFilter<"Review"> | number
     userId?: StringFilter<"Review"> | string
     watchItemId?: StringFilter<"Review"> | string
@@ -4802,7 +4802,7 @@ export namespace Prisma {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    content?: SortOrder
+    content?: SortOrderInput | SortOrder
     rating?: SortOrder
     userId?: SortOrder
     watchItemId?: SortOrder
@@ -4820,7 +4820,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Review"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Review"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Review"> | Date | string
-    content?: StringWithAggregatesFilter<"Review"> | string
+    content?: StringNullableWithAggregatesFilter<"Review"> | string | null
     rating?: IntWithAggregatesFilter<"Review"> | number
     userId?: StringWithAggregatesFilter<"Review"> | string
     watchItemId?: StringWithAggregatesFilter<"Review"> | string
@@ -4981,7 +4981,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     user: UserCreateNestedOneWithoutReviewsInput
     watchItem: WatchItemCreateNestedOneWithoutReviewsInput
@@ -4991,7 +4991,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     userId: string
     watchItemId: string
@@ -5001,7 +5001,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutReviewsNestedInput
     watchItem?: WatchItemUpdateOneRequiredWithoutReviewsNestedInput
@@ -5011,7 +5011,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
     watchItemId?: StringFieldUpdateOperationsInput | string
@@ -5021,7 +5021,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     userId: string
     watchItemId: string
@@ -5031,7 +5031,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
   }
 
@@ -5039,7 +5039,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
     watchItemId?: StringFieldUpdateOperationsInput | string
@@ -5694,7 +5694,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     watchItem: WatchItemCreateNestedOneWithoutReviewsInput
   }
@@ -5703,7 +5703,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     watchItemId: string
   }
@@ -5771,7 +5771,7 @@ export namespace Prisma {
     id?: StringFilter<"Review"> | string
     createdAt?: DateTimeFilter<"Review"> | Date | string
     updatedAt?: DateTimeFilter<"Review"> | Date | string
-    content?: StringFilter<"Review"> | string
+    content?: StringNullableFilter<"Review"> | string | null
     rating?: IntFilter<"Review"> | number
     userId?: StringFilter<"Review"> | string
     watchItemId?: StringFilter<"Review"> | string
@@ -5806,7 +5806,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     user: UserCreateNestedOneWithoutReviewsInput
   }
@@ -5815,7 +5815,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     userId: string
   }
@@ -6007,7 +6007,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     watchItemId: string
   }
@@ -6048,7 +6048,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     watchItem?: WatchItemUpdateOneRequiredWithoutReviewsNestedInput
   }
@@ -6057,7 +6057,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     watchItemId?: StringFieldUpdateOperationsInput | string
   }
@@ -6066,7 +6066,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     watchItemId?: StringFieldUpdateOperationsInput | string
   }
@@ -6075,7 +6075,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    content: string
+    content?: string | null
     rating: number
     userId: string
   }
@@ -6084,7 +6084,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutReviewsNestedInput
   }
@@ -6093,7 +6093,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
   }
@@ -6102,7 +6102,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    content?: StringFieldUpdateOperationsInput | string
+    content?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: IntFieldUpdateOperationsInput | number
     userId?: StringFieldUpdateOperationsInput | string
   }
