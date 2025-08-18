@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  email    String  @unique
+  name     String?
+  password String
+
+  watchItems WatchItem[]
+  reviews    Review[]
+
+  @@map("user")
+}
+
+model WatchItem {
+  id        String   @id @map("id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  title       String
+  type        String
+  director    String
+  releaseYear Int     @map("release_year")
+  isWatched   Boolean @map("is_watched")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  reviews Review[]
+
+  @@map("watch_item")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  content String?
+  rating  Int
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  watchItem   WatchItem @relation(fields: [watchItemId], references: [id], onDelete: Cascade)
+  watchItemId String    @map("watch_item_id")
+
+  @@map("review")
+}
