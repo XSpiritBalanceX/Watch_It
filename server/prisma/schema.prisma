@@ -33,7 +33,7 @@ model WatchItem {
   releaseYear Int     @map("release_year")
   isWatched   Boolean @map("is_watched")
 
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String @map("user_id")
 
   reviews Review[]
@@ -49,10 +49,10 @@ model Review {
   content String?
   rating  Int
 
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String @map("user_id")
 
-  watchItem   WatchItem @relation(fields: [watchItemId], references: [id])
+  watchItem   WatchItem @relation(fields: [watchItemId], references: [id], onDelete: Cascade)
   watchItemId String    @map("watch_item_id")
 
   @@map("review")

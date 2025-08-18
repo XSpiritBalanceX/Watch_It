@@ -1,4 +1,4 @@
-import { IsEmail, IsNumber, IsOptional, IsString, Max, Min, MinLength } from "class-validator";
+import { IsNumber, IsOptional, IsString } from "class-validator";
 
 export class ReviewDto {
   @IsString()
@@ -8,4 +8,8 @@ export class ReviewDto {
   @IsNumber()
   @IsOptional()
   rating: number;
+
+  @IsString()
+  @IsOptional()
+  watchItemId: string;
 }

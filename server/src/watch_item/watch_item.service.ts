@@ -7,7 +7,7 @@ export class WatchItemService {
   constructor(private prisma: PrismaService) {}
 
   async getAll(userId: string) {
-    return this.prisma.watchItem.findMany({ where: { userId } });
+    return this.prisma.watchItem.findMany({ where: { userId }, include: { reviews: true } });
   }
 
   async getWatchItem(itemId: string) {
