@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans } from "next/font/google";
 import { SITE_NAME } from "@/constants/seo.constants";
 import "./globals.scss";
@@ -17,6 +17,21 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: "Best one for checking movies and series",
+  manifest: "/manifest.json",
+  icons: { apple: { url: "/icon.png" } },
+  appleWebApp: {
+    title: "watch it",
+    statusBarStyle: "black-translucent",
+    capable: true,
+  },
+};
+
+export const viewport: Viewport = {
+  maximumScale: 1,
+  initialScale: 1,
+  width: "device-width",
+  userScalable: false,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
