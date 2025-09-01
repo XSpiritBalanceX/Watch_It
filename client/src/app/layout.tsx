@@ -18,11 +18,83 @@ export const metadata: Metadata = {
   },
   description: "Best one for checking movies and series",
   manifest: "/manifest.json",
-  icons: { apple: { url: "/icon.png" } },
+  icons: {
+    icon: "icons/favicon.ico",
+    apple: { url: "icons/180.png", sizes: "180x180" },
+    other: [
+      {
+        rel: "apple-touch-icon",
+        url: "icons/120.png",
+        sizes: "120x120",
+      },
+      {
+        rel: "apple-touch-icon",
+        url: "icons/152.png",
+        sizes: "152x152",
+      },
+      {
+        rel: "apple-touch-icon",
+        url: "icons/167.png",
+        sizes: "167x167",
+      },
+      {
+        rel: "apple-touch-icon",
+        url: "icons/apple-touch-icon.png",
+        sizes: "180x180",
+      },
+      {
+        rel: "icon",
+        url: "icons/favicon-32x32.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        url: "icons/favicon-16x16.png",
+        sizes: "16x16",
+      },
+    ],
+  },
   appleWebApp: {
-    title: "watch it",
+    title: "my take",
     statusBarStyle: "black-translucent",
     capable: true,
+    startupImage: [
+      {
+        url: "icons/st-s-640x1136.png",
+        media:
+          "(device-width: 640px) and (device-height: 1136) and (-webkit-device-pixel-ratio:2)",
+      },
+      {
+        url: "icons/st-s-750x1334.png",
+        media:
+          "(device-width: 750px) and (device-height: 1334px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "icons/st-s-1242x2208.png",
+        media:
+          "(device-width: 1242px) and (device-height: 2208px) and (-webkit-device-pixel-ratio: 3)",
+      },
+      {
+        url: "icons/st-s-1125x2436.png",
+        media:
+          "(device-width: 1125px) and (device-height: 2436px) and (-webkit-device-pixel-ratio: 3)",
+      },
+      {
+        url: "icons/st-s-828x1792.png",
+        media:
+          "(device-width: 828px) and (device-height: 1792px) and (-webkit-device-pixel-ratio: 2)",
+      },
+      {
+        url: "icons/st-s-1242x2688.png",
+        media:
+          "(device-width: 1242px) and (device-height: 2688px) and (-webkit-device-pixel-ratio: 3)",
+      },
+      {
+        url: "icons/st-s-1284x2778.png",
+        media:
+          "(device-width: 1284px) and (device-height: 2778px) and (-webkit-device-pixel-ratio: 3)",
+      },
+    ],
   },
 };
 
